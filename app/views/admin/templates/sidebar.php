@@ -20,7 +20,7 @@ if (strpos($path, '/dashboard') !== false || $path === '/admin') {
     }
 
     .nav-item:hover {
-        background-color: #2D2852; /* Warna latar belakang saat dihover */
+        background-color: #2D2852;
     }
 </style>
 

@@ -67,7 +67,7 @@
             <div class="mx-3 custom-title-icon">
                 <img src="../assets/icon/ruang-2.png" style="width: 36px;" alt="" srcset="">
             </div>
-            <div class="custom-title-text">RUANGA</div>
+            <div class="custom-title-text">RUANG</div>
         </div>
     </div>
     <div class="row px-3">

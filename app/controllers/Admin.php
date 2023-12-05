@@ -2,16 +2,6 @@
 
 class Admin extends Controller
 {
-    public function setActivePage($page)
-    {
-        $this->activePage = $page;
-    }
-
-    public function getActivePage()
-    {
-        return $this->activePage;
-    }
-    
     public function index()
     {
         $data['judul'] = 'Dashboard';
