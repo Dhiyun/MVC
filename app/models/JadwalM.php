@@ -1,17 +1,15 @@
 <?php
 
-class JadwalM
-{
+class JadwalM {
     private $db;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->db = new Database;
     }
 
-    public function getAllJadwal()
-    {
-        $this->db->query("SELECT * FROM jadwal j 
+    public function getAllJadwal() {
+        $this->db->query("SELECT j.*, r.kode, r.nama_ruangan, k.nama_kelas, k.prodi, d.nama_dosen
+        FROM jadwal j 
         JOIN ruangan r ON j.kode_ruang = r.kode 
         JOIN kelas k ON j.id_kelas = k.id
         JOIN dosen d ON j.id_dosen = d.id
@@ -19,26 +17,17 @@ class JadwalM
         return $this->db->resultSet();
     }
 
-    // public function getIdJadwal()
-    // {
-    //     $this->db->query("SELECT id FROM jadwal");
-    //     return $this->db->resultSet();
-    // }
-
-    public function getAllKelas()
-    {
+    public function getAllKelas() {
         $this->db->query("SELECT * FROM kelas ORDER BY nama_kelas, prodi ASC");
         return $this->db->resultSet();
     }
 
-    public function getAllRuangan()
-    {
+    public function getAllRuangan() {
         $this->db->query("SELECT * FROM ruangan ORDER BY lantai, kode ASC");
         return $this->db->resultSet();
     }
 
-    public function tambahRuang($data)
-    {
+    public function tambahRuang($data) {
         $nama_kelas = $_POST['nama_kelas'];
         $prodi = $_POST['prodi'];
         $nama_dosen = $_POST['nama_dosen'];
@@ -54,7 +43,7 @@ class JadwalM
         $this->db->bind('prodi', $prodi);
         $id_kelas_result = $this->db->single();
 
-        if ($id_kelas_result && $id_dosen_result) {
+        if($id_kelas_result && $id_dosen_result) {
             $id_kelas = $id_kelas_result['id'];
             $id_dosen = $id_dosen_result['id'];
 
@@ -74,19 +63,16 @@ class JadwalM
         }
     }
 
-    public function hapusRuang($id)
-    {
-        var_dump($id);
-        // $query = "DELETE FROM jadwal WHERE id = :id";
-        // $this->db->query($query);
-        // $this->db->bind('id', $id);
+    public function hapusRuang($id) {
+        $query = "DELETE FROM jadwal WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
 
-        // $this->db->execute();
-        // return $this->db->rowCount();
+        $this->db->execute();
+        return $this->db->rowCount();
     }
 
-    public function editRuang($kode)
-    {
+    public function editRuang($kode) {
         $query = "DELETE FROM ruangan WHERE kode = :kode";
         $this->db->query($query);
         $this->db->bind('kode', $kode);

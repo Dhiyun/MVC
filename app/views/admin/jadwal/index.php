@@ -133,7 +133,7 @@
                         </td>
                         <td>
                             <button type="button" class="btn btn-read btn-xs" data-bs-toggle="modal"
-                                data-bs-target="#readModal<?= $row['kode'] ?>">
+                                data-bs-target="#readModal<?= $row['id'] ?>">
                                 <img src="../assets/icon/ic-read.png" alt="" style="width: 16px; margin-bottom: 2px;"> Read
                             </button>
                             <button type="button" class="btn btn-edit btn-xs" data-bs-toggle="modal"
@@ -141,7 +141,7 @@
                                 <img src="../assets/icon/ic-edit-hitam.png" alt="" style="width: 16px; margin-bottom: 2px;">
                                 Edit
                             </button>
-                            <a href="<?= JADWALURL ?>/hapus/<?= $row['kode'] ?>"
+                            <a href="<?= JADWALURL ?>/hapus/<?= $row['id'] ?>"
                                 onclick="javascript:return confirm('Hapus Data Ruang ?');"
                                 class="btn btn-delete btn-xs"><img src=".assets/icon/ic-delete.png" alt="" srcset=""
                                     style="width: 16px; width:16px; margin-bottom: 3px;"> Delete</a>
@@ -245,8 +245,8 @@
     foreach ($data['jdwl'] as $row) {
         ?>
         <!-- Modal Read -->
-        <div class="modal fade" id="readModal<?= $row['kode'] ?>" tabindex="-1"
-            aria-labelledby="readModalLabel<?= $row['kode'] ?>" aria-hidden="true" style="font-size: 15px">
+        <div class="modal fade" id="readModal<?= $row['id'] ?>" tabindex="-1"
+            aria-labelledby="readModalLabel<?= $row['id'] ?>" aria-hidden="true" style="font-size: 15px">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -317,8 +317,8 @@
     <?php } ?>
 
     <!-- Modal Edit -->
-    <div class="modal fade" id="editModal<?= $row2['kode'] ?>" tabindex="-1"
-        aria-labelledby="editModalLabel<?= $row2['kode'] ?>" aria-hidden="true" style="font-size: 15px">
+    <div class="modal fade" id="editModal<?= $row2['id'] ?>" tabindex="-1"
+        aria-labelledby="editModalLabel<?= $row2['id'] ?>" aria-hidden="true" style="font-size: 15px">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
