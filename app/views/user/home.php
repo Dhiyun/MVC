@@ -158,7 +158,6 @@
         <title>Home</title>
     </head>
     <body>
-        <?php include 'template/navbar.php'?>
         <section id="halaman1">
             <div class="container">
                 <div class="hero-container">
@@ -191,8 +190,6 @@
                 </div>
             </div>
         </section>
-            
-        <?php include 'template/footer.php'?>
     </body>
 
     <script>

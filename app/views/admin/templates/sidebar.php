@@ -60,7 +60,7 @@ if (strpos($path, '/dashboard') !== false || $path === '/admin') {
 
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item <?= $page == 'jadwal' ? 'active' : ''; ?>">
-                    <a class="nav-link d-flex align-items-center gap-2" href="?page=jadwal"
+                    <a class="nav-link d-flex align-items-center gap-2" href="<?= ADMINURL ?>/jadwal"
                         style="color: #fff; font-size: 14px;">
                         <img src="../assets/icon/ic-jadwal.png" alt="">
                         Jadwal

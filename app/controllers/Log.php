@@ -33,7 +33,7 @@ class Log extends Controller
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['role'] = $row['role'];
                     if ($row['role'] === "User") {
-                        header("Location: user/");
+                        header("Location: " . BASEURL . "user/");
                     } else if ($row['role'] === "Admin") {
                         header("Location: " . BASEURL . "admin/dashboard");
                     } else {
