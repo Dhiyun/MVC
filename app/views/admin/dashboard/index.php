@@ -1,5 +1,7 @@
 <head>
-    <title><?= $data['judul'] ?></title>
+    <title>
+        <?= $data['judul'] ?>
+    </title>
 </head>
 
 <main class="col-md-10" style="background-color: #F5F5F5">

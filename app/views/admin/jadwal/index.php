@@ -95,11 +95,16 @@
             <div class="custom-title-text">JADWAL</div>
         </div>
     </div>
-
     <div class="row px-3">
         <div class="col-lg-3">
             <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#exampleModal"
                 data-bs-whatever="@mdo"><i class="fa fa-plus"></i> Tambah Jadwal</button>
+        </div>
+    </div>
+
+    <div class="row px-3 mt-3">
+        <div class="col-lg-6">
+            <?php Flasher::flash(); ?>
         </div>
     </div>
 

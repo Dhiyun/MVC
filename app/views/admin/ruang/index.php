@@ -78,6 +78,13 @@
                 data-bs-whatever="@mdo"><i class="fa fa-plus"></i> Tambah Ruang</button>
         </div>
     </div>
+
+    <div class="row px-3 mt-3">
+        <div class="col-lg-6">
+            <?php Flasher::flash(); ?>
+        </div>
+    </div>
+    
     <div class="table-responsive small pt-3 px-3" style="border-radius: 50px;">
         <table class="table">
             <thead>
@@ -271,5 +278,4 @@
             </div>
         </div>
     <?php } ?>
-
 </main>

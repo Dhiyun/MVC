@@ -1,18 +1,3 @@
-<?php
-if (session_status() === PHP_SESSION_NONE)
-    session_start();
-
-// require_once '../app/models/UserModel.php'; // Adjust the path accordingly
-// $userModel = new UserModel();
-
-// if ($_SERVER["REQUEST_METHOD"] === "POST") {
-//     $username = $_POST['username'];
-//     $password = $_POST['password'];
-
-//     $userModel->checkLogin($username, $password);
-// }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -254,8 +239,8 @@ if (session_status() === PHP_SESSION_NONE)
                     </div>
                     <div class="pesan">
                         <?php
-                        if (isset($_SESSION['_flashdata'])) {
-                            foreach ($_SESSION['_flashdata'] as $key => $val) {
+                        if(isset($_SESSION['_flashdata'])) {
+                            foreach($_SESSION['_flashdata'] as $key => $val) {
                                 echo get_flashdata($key);
                             }
                         }
@@ -307,7 +292,7 @@ if (session_status() === PHP_SESSION_NONE)
     <script>
         setTimeout(function () {
             document.querySelector('.alert').style.display = 'none';
-        }, 3000);
+        }, 5000);
     </script>
 
 </body>

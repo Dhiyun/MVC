@@ -1,7 +1,6 @@
 <?php
 
-class Admin extends Controller
-{
+class Admin extends Controller {
     // public function setActivePage($page)
     // {
     //     $this->activePage = $page;
@@ -11,9 +10,8 @@ class Admin extends Controller
     // {
     //     return $this->activePage;
     // }
-    
-    public function index()
-    {
+
+    public function index() {
         $data['judul'] = 'Dashboard';
         $this->view('admin/templates/header');
         $this->view('admin/templates/sidebar');
@@ -21,8 +19,7 @@ class Admin extends Controller
         $this->view('admin/templates/footer');
     }
 
-    public function ruang()
-    {
+    public function ruang() {
         $data['judul'] = 'Ruang';
         $model = $this->model('RuangM');
         $data['rng'] = $model->getAllRuangFasilitas();
@@ -35,8 +32,7 @@ class Admin extends Controller
         $this->view('admin/templates/footer');
     }
 
-    public function jadwal()
-    {
+    public function jadwal() {
         $data['judul'] = 'Jadwal';
         $model = $this->model('JadwalM');
         $data['jdwl'] = $model->getAllJadwal();

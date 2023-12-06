@@ -2,40 +2,36 @@
 
 include '../app/fungsi/pesan_kilat.php';
 
-class Log extends Controller
-{
-    public function index()
-    {
+class Log extends Controller {
+    public function index() {
         $data['judul'] = 'Login';
         $this->view('home/login', $data);
     }
 
     private $db;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->db = new Database;
     }
 
-    public function login()
-    {
+    public function login() {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
         $data['login'] = $this->model('UserLogin')->getUser($username, $password);
         session_start();
-        if ($data['login'] == NULL) {
+        if($data['login'] == NULL) {
             pesan('danger', "Login gagal. Periksa kembali username dan password.");
-            header("Location:" . BASEURL . "log");
+            header("Location:".BASEURL."log");
         } else {
-            foreach ($data['login'] as $row) {
-                if ($row['password'] === md5($password)) {
+            foreach($data['login'] as $row) {
+                if($row['password'] === md5($password)) {
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['role'] = $row['role'];
-                    if ($row['role'] === "User") {
-                        header("Location: " . BASEURL . "user/");
-                    } else if ($row['role'] === "Admin") {
-                        header("Location: " . BASEURL . "admin/dashboard");
+                    if($row['role'] === "User") {
+                        header("Location: ".BASEURL."user/");
+                    } else if($row['role'] === "Admin") {
+                        header("Location: ".BASEURL."admin/dashboard");
                     } else {
                         pesan('danger', "User tidak di temukan");
                         header("Location: log");
@@ -48,12 +44,11 @@ class Log extends Controller
         }
     }
 
-    public function logout()
-    {
-        if (session_status() === PHP_SESSION_NONE)
+    public function logout() {
+        if(session_status() === PHP_SESSION_NONE)
             session_start();
 
         session_destroy();
-        header("Location: " . BASEURL . "home");
+        header("Location: ".BASEURL."home");
     }
 }
