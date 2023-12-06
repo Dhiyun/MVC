@@ -4,7 +4,7 @@ class Jadwal extends Controller
 {
     public function tambah()
     {
-        if ($this->model("JadwalM")->tambahRuang($_POST) > 0) {
+        if ($this->model("JadwalM")->tambahJadwal($_POST) > 0) {
             header('Location: ' . ADMINURL . '/jadwal');
             exit;
         }
@@ -12,7 +12,7 @@ class Jadwal extends Controller
 
     public function hapus($id)
     {
-        if ($this->model("JadwalM")->hapusRuang($id) > 0) {
+        if ($this->model("JadwalM")->hapusJadwal($id) > 0) {
             header('Location: ' . ADMINURL . '/jadwal');
             exit;
         }
@@ -20,8 +20,10 @@ class Jadwal extends Controller
 
     public function edit()
     {
-        echo 'oe';
-        // $this->model('RuangM')->getDataUbah($_POST['kode']);
+        if ($this->model("JadwalM")->editJadwal($_POST) > 0) {
+            header('Location: ' . ADMINURL . '/jadwal');
+            exit;
+        }
     }
 }
 
