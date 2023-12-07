@@ -1,7 +1,6 @@
 <style>
     footer {
         background-color: #2d2852;
-        margin-top: 5px;
     }
 
     body,
