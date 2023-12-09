@@ -32,7 +32,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             font-family: 'Poppins', sans-serif;
-            font-size: 24px;
+            font-size: 20px;
             font-style: normal;
         }
 

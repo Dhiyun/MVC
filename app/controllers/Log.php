@@ -34,11 +34,11 @@ class Log extends Controller {
                         header("Location: ".BASEURL."admin/dashboard");
                     } else {
                         pesan('danger', "User tidak di temukan");
-                        header("Location: log");
+                        header("Location: ".BASEURL."log");
                     }
                 } else {
                     pesan('danger', "Login gagal. Periksa kembali username dan password.");
-                    header("Location: log");
+                    header("Location: ".BASEURL."log");
                 }
             }
         }

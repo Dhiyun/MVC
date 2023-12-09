@@ -109,7 +109,7 @@
     </div>
 
     <div class="table-responsive small pt-3 px-3">
-        <table class="table rounded" style="border-radius: 15px;">
+        <table id="tablejadwal" class="table rounded" style="border-radius: 15px; background-color: #000;">
             <thead>
                 <tr>
                     <th scope="col" style="background-color: #363062; color:#fff; border-radius">K. Ruangan</th>

@@ -27,7 +27,7 @@
             justify-content: center;
             flex-direction: column;
             height: 100vh;
-            background: url('assets/img/bg-home.png');
+            background: url('assets/img/bg-homee.png');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -60,12 +60,12 @@
             text-align: center;
         }
 
-        .text h1 {
+        .text h2 {
             margin: 10px 0;
             color: #F45905;
             text-align: center;
             font-family: Poppins;
-            font-size: 80px;
+            font-size: 48px;
             font-style: normal;
             font-weight: 600;
             line-height: 131.589%;
@@ -82,15 +82,15 @@
         }
 
         .button {
-            width: 133px;
-            height: 55px;
+            width: 128px;
+            height: 42px;
             flex-shrink: 0;
             bottom: 0;
             right: 0;
             margin-top: 10px;
             margin-right: 5px;
             border: none;
-            border-radius: 15px;
+            border-radius: 16px;
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -128,16 +128,13 @@
             </div>
         </div>
         <div class="text">
-            <h1 class="w3-margin w3-jumbo"><b>What Website is This?</b></h1>
+            <h2 class="w3-margin"><b>What Website is This?</b></h2>
             <p class="w3-xlarge">
-                Ayo berkenalan dengan website “Space Go”. "Space Go" merupakan situs keren buat booking ruangan di JTI
-                Politeknik Negeri Malang, loh! Jadi, kalau lagi butuh ruangan buat bikin acara atau rapat, bisa cek di
-                sini. Desain antarmukanya mudah banget, bisa lihat ruangan yang kosong dan langsung booking. Simpel!
-                Mudah! Dan Praktis!
-                "Space Go" bisa jadi pilihan yang oke untuk meminjam ruangan pada JTI! 🚀✨
+            Ayo berkenalan dengan website "Space Go", sebuah situs web untuk pemesanan ruangan di Jurusan Teknologi Informasi Politeknik Negeri Malang.
+            Jika Anda membutuhkan ruangan untuk acara atau rapat, "Space Go" adalah wadah yang tepat bagi warga Polinema. 🚀✨
             </p>
         </div>
-        <div>
+        <div class="row">
             <a href="<?= BASEURL ?>log">
                 <button class="button btn-login"><b>LOGIN</b></button>
             </a>

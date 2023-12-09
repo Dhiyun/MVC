@@ -1,7 +1,8 @@
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
     footer {
-        background-color: #2d2852;
-        margin-top: 5px;
+        background-color: #2d2852;                                                                                                                      
     }
 
     body,
@@ -16,10 +17,10 @@
         font-family: 'Montserrat', sans-serif;
         color: #fff;
     }
-</style>
-<footer class="text-center text-lg-start text-muted">
-    <section class="">
-        <div class="container-fluid">
+    </style>
+    <footer class="text-center text-lg-start text-muted">
+        <section class="">
+            <div class="container-fluid">
             <!-- Grid row -->
             <div class="row">
                 <!-- Grid column -->

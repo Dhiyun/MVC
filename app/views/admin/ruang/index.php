@@ -84,7 +84,7 @@
             <?php Flasher::flash(); ?>
         </div>
     </div>
-    
+
     <div class="table-responsive small pt-3 px-3" style="border-radius: 50px;">
         <table class="table">
             <thead>
@@ -124,7 +124,7 @@
                                 Edit
                             </a>
                             <a href="<?= RUANGURL ?>/hapus/<?= $row['kode'] ?>"
-                                onclick="javascript:return confirm('Hapus Data Jabatan ?');"
+                                onclick="javascript:return confirm('Hapus Data Ruang ?');"
                                 class="btn btn-delete btn-xs"><img src="../assets/icon/ic-delete.png" alt="" srcset=""
                                     style="width: 16px; width:16px; margin-bottom: 3px;"> Delete</a>
                         </td>
@@ -146,16 +146,16 @@
                     <div class="modal-body" style="font-size: 16px">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Kode:</label>
-                            <input type="text" name="kode" class="form-control text-modal-custom">
+                            <input type="text" name="kode" class="form-control text-modal-custom" required>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Nama Ruang:</label>
-                            <input type="text" name="nama_ruangan" class="form-control text-modal-custom">
+                            <input type="text" name="nama_ruangan" class="form-control text-modal-custom" required>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Lantai: </label>
                             <select class="form-select text-modal-custom" name="lantai"
-                                aria-label="Default select example">
+                                aria-label="Default select example" required>
                                 <option selected>Pilih Lantai</option>
                                 <?php
                                 foreach ($data['lnt'] as $row2) {
@@ -171,25 +171,20 @@
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Kapasitas:</label>
                             <input type="text" name="kapasitas" class="form-control text-modal-cu stom"
-                                id="recipient-name">
+                                id="recipient-name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Fasilitas:</label>
-                            <select class="form-select text-modal-custom" name="id_fasilitas"
-                                aria-label="Default select example">
-                                <option selected>Pilih Fasilitas</option>
-                                <?php
-                                foreach ($data['fsl'] as $row3) {
-                                    ?>
-                                    <option value="<?= $row3['id']; ?>">
-                                        <?= $row3['nama_barang']; ?>
-                                    </option>
-                                    <?php
-                                }
+                            <label for="recipient-name" class="col-form-label">Fasilitas:</label><br>
+                            <?php
+                            foreach ($data['fsl'] as $row3) {
                                 ?>
-                            </select>
+                                <label>
+                                    <input type="checkbox" name="fasilitas_checked[]" value="<?= $row3['id']; ?>"><?= $row3['nama_barang']; ?>
+                                </label><br>
+                                <?php
+                            }
+                            ?>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-batal" data-bs-dismiss="modal">
@@ -205,9 +200,8 @@
     </div>
 
     <?php
-    foreach ($data['rug'] as $row) {
+    foreach ($data['rng'] as $row) {
         ?>
-
         <!-- Modal Edit -->
         <div class="modal fade" id="editModal<?= $row['kode'] ?>" tabindex="-1"
             aria-labelledby="editModalLabel<?= $row['kode'] ?>" aria-hidden="true" style="font-size: 15px">
@@ -217,8 +211,7 @@
                         <h1 class="modal-title fs-5" id="editModalLabel<?= $row['kode'] ?>">Edit Jadwal</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= RUANGURL ?>/edit" method="post"
-                        style="font-size: 15px">
+                    <form action="<?= RUANGURL ?>/edit" method="POST" style="font-size: 15px">
                         <div class="modal-body" style="font-size: 16px">
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Kode:</label>
@@ -253,20 +246,19 @@
                                     value="<?= $row['kapasitas'] ?>">
                             </div>
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Fasilitas:</label>
-                                <select class="form-select text-modal-custom" name="id_fasilitas" name
-                                    aria-label="Default select example">
-                                    <option selected>Pilih Fasilitas</option>
-                                    <?php
-                                    foreach ($data['fsl'] as $row3) {
-                                        ?>
-                                        <option value="<?= $row3['id']; ?>" <?= ($row3['id'] == $row['id_fasilitas']) ? 'selected' : '' ?>>
-                                            <?= $row3['nama_barang']; ?>
-                                        </option>
-                                        <?php
-                                    }
+                                <label for="recipient-name" class="col-form-label">Fasilitas:</label><br>
+                                <?php
+                                foreach ($data['fsl'] as $row3) {
+                                    $selectedFasilitas = explode(',', $row['nama_barang']);
                                     ?>
-                                </select>
+                                    <label>
+                                    <input type="checkbox" name="fasilitas_checked[]" value="<?= $row3['id']; ?>" 
+                                    <?php echo (in_array($row3['nama_barang'], $selectedFasilitas)) ? 'checked' : ''; ?>>
+                                        <?= $row3['nama_barang']; ?>
+                                    </label><br>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                         <div class="modal-footer">
