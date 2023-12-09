@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
     <div class="container-fluid">
+<<<<<<< HEAD
         <a class="navbar-brand" href="#"><img src="../assets/icon/logo.png" style="width: 55px; height; 55px;"></a>
+=======
+        <a class="navbar-brand" href="#"><img src="../assets/icon/logo.png" style="width: 60px; height; 60px;"></a>
+>>>>>>> 7878e9a21e5d47d7c58fb0ab95607a80bab63745
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
             <ul class="navbar-nav mb-2 mb-lg-0">

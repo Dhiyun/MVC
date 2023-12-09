@@ -90,18 +90,18 @@
             color: #FFF;
             text-align: center;
             font-family: 'Poppins', sans-serif;
-            font-size: 55px;
+            font-size: 40px;
             font-style: normal;
             font-weight: 700;
             line-height: 131.589%;
         }
 
         .hero-text .text-paragraf {
-            width: 350px;
+            width: 300px;
             color: #FFF;
             text-align: center;
             font-family: 'Montserrat', sans-serif;
-            font-size: 25px;
+            font-size: 20px;
             font-style: normal;
             font-weight: 400;
             line-height: 131.589%;
@@ -150,7 +150,7 @@
             font-size: 28px;
             font-style: normal;
             font-weight: 500;
-            line-height: 131.589%;
+            line-height: 131.589%
         }
 
         .card.mb-3 .kotak a {
