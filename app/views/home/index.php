@@ -136,10 +136,7 @@
         </div>
         <div class="row">
             <a href="<?= BASEURL ?>log">
-                <button class="button btn-login"><b>LOGIN</b></button>
-            </a>
-            <a href="<?= BASEURL ?>register">
-                <button class="button btn-register"><b>REGISTER</b></button>
+                <button class="button btn-login"><b>Let’s Go</b></button>
             </a>
         </div>
     </div>

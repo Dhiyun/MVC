@@ -1,36 +1,4 @@
-<?php 
-    include 'template/navbar.php';
-    include '../config/koneksi.php';
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Ruang</title>
-
-    <style>
-        * {
-            font-family: 'Montserrat', sans-serif;
-            color: #000;
-        }
-
-        body {
-            background-color: #2A1A5E;
-        }
-
-        .btn-custom {
-            background-color: none;
-            border: none;
-            padding-left: 0;
-        }
-    </style>
-</head>
-<body>
-
+<title><?= $data['judul'] ?></title>
     <div class="container">
         <div class="card mt-4" style="border: 0; border-radius: 20px;">
             <div class="card-body">
@@ -52,9 +20,7 @@
                         <tbody>
                         <?php
                             // $no = 1;
-                            $query = "SELECT * FROM ruangan";
-                            $result = mysqli_query($koneksi, $query);
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            foreach ($data['rng'] as $row) {
                         ?>
                             <tr>
                                 <td>

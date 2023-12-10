@@ -8,6 +8,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css">
+    <link href="assets/icon/logo.png" rel="icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -38,10 +39,10 @@
             max-width: 100%;
             min-height: 400px;
             flex-shrink: 0;
+            filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.50));
         }
 
         .sign-in {
-            position: absolute;
             width: 50%;
             height: 100%;
             display: flex;
@@ -153,7 +154,7 @@
             top: 15%;
         }
 
-        .input-group a {
+        .input-group .fp {
             position: relative;
             color: #000;
             font-family: Montserrat;
@@ -166,14 +167,9 @@
             margin: -10px -27px 0px 50px;
         }
 
-        .form-container.sign-in button {
+        .form-container.sign-in .submit {
             width: 100px;
             height: 40px;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            margin-bottom: 20px;
-            margin-right: 20px;
             border: none;
             border-radius: 10px;
             background-color: #2A1A5E;
@@ -182,8 +178,26 @@
             transition: background-color 0.3s ease;
         }
 
-        .form-container.sign-in button:hover {
+        .form-container.sign-in .reg {
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #FB9224;
+            color: #fff;
+            cursor: pointer;
+            padding-top: 8px;
+            padding-left: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container.sign-in .submit:hover {
             background-color: #242041;
+        }
+
+        .form-container.sign-in .reg:hover {
+            background-color: #a76118;
         }
 
         .sign-in .custom-div {
@@ -261,7 +275,7 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            <input type="text" class="form-control" name="username" placeholder="Username" required>
+                            <input type="text" class="form-control" name="username" placeholder="Username">
                         </div>
                         <div class="input-container">
                             <div class="icon">
@@ -279,11 +293,14 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
-                        <a href="#" style="font-size: 12px; color:#000;">Forget Password?</a>
+                        <a class="fp" href="#" style="font-size: 12px; color:#000;">Forget Password?</a>
                     </div>
-                    <button type="submit"><b>SUBMIT</b></button>
+                    <div class="row" style ="align-self: bottom; margin-right: 10px; gap: 10px; position: absolute; bottom: 40px; right: 80px;">
+                        <a class="reg" href="<?= BASEURL ?>reg">REGISTER</a>
+                        <button class="submit" href="submit">SUBMIT</button>
+                    </div>
                 </form>
             </div>
         </div>

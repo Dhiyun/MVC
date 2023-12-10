@@ -169,7 +169,7 @@
                     <div class="hero-text">
                         <h2 class="text-header"><b>Selamat Datang di Jurusan Teknologi Informasi</b></h2>
                         <p class="text-paragraf">Manfaatkan fasilitas kampus dengan sebaik mungkin!</p>
-                        <button class="btn submit">Let's Start</a>
+                        <button class="btn submit">Let's Start</button>
                     </div>
                 </div>
             </div>

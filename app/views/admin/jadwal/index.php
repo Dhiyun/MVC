@@ -112,7 +112,8 @@
         <table id="tablejadwal" class="table rounded" style="border-radius: 15px; background-color: #000;">
             <thead>
                 <tr>
-                    <th scope="col" style="background-color: #363062; color:#fff; border-radius">K. Ruangan</th>
+                    <th scope="col" style="background-color: #363062; color:#fff;">No.</th>
+                    <th scope="col" style="background-color: #363062; color:#fff;">K. Ruangan</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">N. Ruangan</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">Hari</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">Matkul</th>
@@ -121,9 +122,13 @@
             </thead>
             <tbody>
                 <?php
+                $no = 1;
                 foreach($data['jdwl'] as $row) {
                     ?>
                     <tr>
+                        <td>
+                            <?= $no++ ?>
+                        </td>
                         <td>
                             <?= $row['kode'] ?>
                         </td>

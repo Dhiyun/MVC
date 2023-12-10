@@ -2,11 +2,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
     footer {
-<<<<<<< HEAD
-        background-color: #2d2852;                                                                                                                      
-=======
         background-color: #2d2852;
->>>>>>> 7878e9a21e5d47d7c58fb0ab95607a80bab63745
     }
 
     body,

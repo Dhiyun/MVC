@@ -12,7 +12,21 @@
         document.querySelector('.alert').style.display = 'none';
     }, 5000);
 
+    $('#tableruang').DataTable({
+        "language": {
+            "emptyTable": "Tidak Ada Data Pada Table Ruang."
+        }
+    });
+
+    $('#tablejadwal').DataTable({
+        "language": {
+            "emptyTable": "Tidak Ada Data Pada Table Jadwal."
+        }
+    });
+
     new DataTable('#tablejadwal');
+
+    new DataTable('#tableruang');
 
     $(document).ready(function () {
         $(".toggle").hide();

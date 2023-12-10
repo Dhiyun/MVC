@@ -60,6 +60,10 @@
         .text-modal-custom {
             font-size: 14px;
         }
+
+        #tableruang {
+            color:#000;
+        }
     </style>
 </head>
 
@@ -85,10 +89,11 @@
         </div>
     </div>
 
-    <div class="table-responsive small pt-3 px-3" style="border-radius: 50px;">
-        <table class="table">
+    <div class="table-responsive small pt-3 px-3">
+        <table id="tableruang" class="table rounded" style="border-radius: 15px; background-color: #000;">
             <thead>
                 <tr>
+                    <th scope="col" style="background-color: #363062; color:#fff;">No.</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">Kode</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">Nama Ruang</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">Lantai</th>
@@ -99,9 +104,13 @@
             </thead>
             <tbody>
                 <?php
+                $no = 1;
                 foreach ($data['rng'] as $row) {
                     ?>
                     <tr>
+                        <td>
+                            <?= $no++ ?>
+                        </td>
                         <td>
                             <?= $row['kode'] ?>
                         </td>
