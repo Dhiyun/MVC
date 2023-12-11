@@ -24,12 +24,11 @@
             <!-- Grid row -->
             <div class="row">
                 <!-- Grid column -->
-                <div class="col-sm-3 mx-auto mt-5">
-                    <!-- Content -->
+                <div class="col-sm-4 mx-auto mt-5 display-flex align-items-center"
                     <h6 class="text-uppercase fw-bold mb-4">
                         <img src="../assets/img/logo-p-copy.png" style="width: 200px; height; 200px;">
                     </h6>
-                    <p>
+                    <p class="mt-3">
                         "Space Go", sebuah situs web untuk pemesanan ruangan di Jurusan Teknologi Informasi
                         Politeknik Negeri Malang.
                         Jika Anda membutuhkan ruangan untuk acara atau rapat.
@@ -37,11 +36,14 @@
                         bagi warga Polinema.
                     </p>
                 </div>
-                <!-- Grid column -->
-                <div class="col-sm-1 mx-auto mt-5">
+                
+                <div class="col-sm-1">
+
                 </div>
+
                 <!-- Grid column -->
-                <div class="col-lg-3 mx-auto mb-4 mt-5">
+                <div class="col-sm-4 mx-auto mb-4 mt-5 
+                " style=" color: #fff;  display: flex; flex-direction: column; ">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         Spacetoon Team
@@ -62,10 +64,10 @@
                         <a>Rama Pramudhita Bhaskara</a>
                     </p>
                 </div>
-                <!-- Grid column -->
 
+                
                 <!-- Grid column -->
-                <div class="col-lg-3 mx-auto mb-4 mt-5">
+                <div class="col-sm-2 mx-auto mb-4 mt-5">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
                     <p><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 34 34" fill="none"
@@ -101,7 +103,7 @@
                             <path
                                 d="M5.12833 12.0282C7.91916 -0.240179 26.095 -0.226012 28.8717 12.0423C30.5008 19.239 26.0242 25.3307 22.1 29.099C19.2525 31.8473 14.7475 31.8473 11.8858 29.099C7.97583 25.3307 3.49916 19.2248 5.12833 12.0282Z"
                                 stroke="white" stroke-width="3" />
-                        </svg>Jl.Soekarno Hatta</p>
+                        </svg>Jl. Soekarno Hatta</p>
                 </div>
             </div>
         </div>

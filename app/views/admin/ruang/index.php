@@ -18,7 +18,7 @@
         }
 
         .btn-simpan {
-            background-color: #FFBD2E;
+            background-color: #FB9224;
             color: #fff;
             border-radius: 20px;
             width: 90px;
@@ -27,7 +27,7 @@
         }
 
         .btn-simpan:hover {
-            background-color: #FFBD2E;
+            background-color: #FB9224;
             color: #fff;
         }
 

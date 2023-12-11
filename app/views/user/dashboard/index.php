@@ -6,7 +6,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="../assets/img/logo-hs.png" rel="icon">
+    <link href="../assets/icon/logo.png" rel="icon">
     <style>
         * {
             font-family: 'Montserrat', sans-serif;
@@ -18,8 +18,8 @@
         }
 
         .submit {
-            width: 150px;
-            height: 50px;
+            width: 120px;
+            height: 40px;
             margin: 20px 0px 0px 0px;
             bottom: 0;
             right: 0;
@@ -32,7 +32,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             font-family: 'Poppins', sans-serif;
-            font-size: 20px;
+            font-size: 16px;
             font-style: normal;
         }
 
@@ -62,8 +62,11 @@
 
         .hero-container {
             height: 900px;
-            margin: 20px 10px 10px -100px;
+            /* margin: 20px 10px 10px -100px; */
+            margin: 20px 10px 10px 0px;
             text-align: center;
+            /* background-color: #FB9224; */
+            width: 100%;
         }
 
         .hero-image {
@@ -72,7 +75,7 @@
         }
 
         .hero-image img {
-            width: 1500px;
+            width: 100%;
             height: 800px;
         }
 
@@ -90,18 +93,18 @@
             color: #FFF;
             text-align: center;
             font-family: 'Poppins', sans-serif;
-            font-size: 55px;
+            font-size: 40px;
             font-style: normal;
             font-weight: 700;
             line-height: 131.589%;
         }
 
         .hero-text .text-paragraf {
-            width: 350px;
+            width: 300px;
             color: #FFF;
             text-align: center;
             font-family: 'Montserrat', sans-serif;
-            font-size: 25px;
+            font-size: 20px;
             font-style: normal;
             font-weight: 400;
             line-height: 131.589%;
@@ -117,7 +120,7 @@
             color: #FFF;
             text-align: center;
             font-family: 'Poppins', sans-serif;
-            font-size: 50px;
+            font-size: 42px;
             font-style: normal;
             font-weight: 700;
             line-height: 131.589%;
@@ -126,16 +129,24 @@
 
         #halaman1 {
             background-color: #F2F2F2;
-            max-width: 1920px;
-            margin: 25px auto;
+            padding: 0;
+            /* margin: 25px auto; */
+            /* center the content */
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            width: 100%;
         }
 
         #halaman2 {
             padding-top: 15px;
             background-color: #FB9224;
-            max-width: 1920px;
+            /* max-width: 1920px; */
             margin: 0 auto;
-            height: 750px;
+            padding-bottom: 50px;
+            /* height: 750px; */
         }
 
         .card.mb-3 {
@@ -147,10 +158,10 @@
             color: #000;
             text-align: justify;
             font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
+            font-size: 20px;
             font-style: normal;
             font-weight: 500;
-            line-height: 131.589%;
+            /* line-height: 131.589% */
         }
 
         .card.mb-3 .kotak a {
