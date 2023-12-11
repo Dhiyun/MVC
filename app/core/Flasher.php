@@ -29,7 +29,7 @@ class Flasher {
                                 <strong>' . $_SESSION['flash']['pesan'] . ' ' . $_SESSION['flash']['aksi'] . '</strong>
                             </div>
                             <div class="modal-footer" style="display: flex; justify-content: center;">
-                                <button type="button" class="btn btn-primary" style="display: flex;" onclick="closeModal()">Tutup</button>
+                                <button type="button" class="btn" style="display: flex; background-color: #2A1A5E; color: #fff;" onclick="closeModal()">Tutup</button>
                             </div>
                         </div>
                     </div>

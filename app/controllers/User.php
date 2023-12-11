@@ -36,11 +36,11 @@ class User extends Controller {
         $this->view('user/templates/footer');
     }
 
-    public function jadwal()
+    public function peminjaman()
     {
         $this->checkRole();
 
-        $data['judul'] = 'Admin | Jadwal';
+        $data['judul'] = 'Peminjaman';
 
         $model = $this->model('JadwalM');
 
@@ -48,9 +48,25 @@ class User extends Controller {
         $data['jdwlp'] = $model->getAllJadwalPivot();
         $data['rng'] = $model->getAllRuangan();
 
-        $this->view('admin/templates/header');
-        $this->view('admin/templates/sidebar');
-        $this->view('admin/jadwal/index', $data);
-        $this->view('admin/templates/footer');
+        $this->view('user/templates/navbar');
+        $this->view('user/peminjaman/index', $data);
+        $this->view('user/templates/footer');
+    }
+
+    public function history()
+    {
+        $this->checkRole();
+
+        $data['judul'] = 'History';
+
+        // $model = $this->model('JadwalM');
+
+        // $data['jdwl'] = $model->getAllJadwal();
+        // $data['jdwlp'] = $model->getAllJadwalPivot();
+        // $data['rng'] = $model->getAllRuangan();
+
+        $this->view('user/templates/navbar');
+        $this->view('user/history/index', $data);
+        $this->view('user/templates/footer');
     }
 }

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
     <style>
@@ -60,7 +63,7 @@
             margin-top: -2.5px;
         }
         
-        /*<?php for ($i = 6; $i <= 8; $i++) { ?>
+        <?php for ($i = 6; $i <= 8; $i++) { ?>
         #carouselLantai-<?php echo "$i" ?> {
             display: none;
         }
@@ -72,7 +75,7 @@
                 display: none;
             <?php } ?>
         }
-        <?php } ?> */
+        <?php } ?>
 
         .carousel-item.active,
         .carousel-item-next,
