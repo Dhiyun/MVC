@@ -1,12 +1,7 @@
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="../assets/icon/logo.png" rel="icon">
+    <title>
+        <?= $data['judul']; ?>
+    </title>
     <style>
         * {
             font-family: 'Montserrat', sans-serif;
@@ -168,7 +163,6 @@
             color: blue;
         }
     </style>
-    <title>Home</title>
 </head>
 
 <body>
@@ -209,30 +203,3 @@
         </div>
     </section>
 </body>
-
-<script>
-    $(document).ready(function () {
-        $('.nav-item').hover(
-            function () {
-                $(this).find('.underline').css({
-                    'width': '100%',
-                    'left': '0'
-                });
-            },
-            function () {
-                $(this).find('.underline').css({
-                    'width': '0',
-                    'left': '50%'
-                });
-            }
-        );
-
-        $('.submit').on('click', function () {
-            $('html, body').animate({
-                scrollTop: $('#long-content').offset().top - 50
-            }, 0);
-        });
-    });
-</script>
-
-</html>

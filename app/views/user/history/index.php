@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
+    <title>
+        <?= $data['judul']; ?>
+    </title>
     <style>
         body {
             background-color: #2A1A5E;
@@ -48,8 +45,8 @@
         }
     </style>
 </head>
+
 <body>
-<title><?= $data['judul'] ?></title>
     <div class="container">
         <div class="card mt-4" style="border: 0; border-radius: 20px;">
             <div class="card-body">
@@ -114,4 +111,3 @@
         </div>
     </div>
 </body>
-</html>

@@ -117,4 +117,85 @@
 </footer>
 </body>
 
-</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    //Underline navbar?
+    $(document).ready(function () {
+        $('.nav-item').hover(
+            function () {
+                $(this).find('.underline').css({
+                    'width': '100%',
+                    'left': '0'
+                });
+            },
+            function () {
+                $(this).find('.underline').css({
+                    'width': '0',
+                    'left': '50%'
+                });
+            }
+        );
+
+        $('.submit').on('click', function () {
+            $('html, body').animate({
+                scrollTop: $('#long-content').offset().top - 50
+            }, 0);
+        });
+    });
+
+    // Data Picker Initialization
+    $('.datepicker').datepicker({
+        inline: true
+    });
+
+    //select date
+    $(document).ready(function() {
+        $('#myDateInput').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+            templates: {
+                leftArrow: '<i class="fas fa-chevron-left"></i>',
+                rightArrow: '<i class="fas fa-chevron-right"></i>'
+            }
+        });
+    });
+
+    //Search
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+    //Search
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+    //Caraousel Lantai
+    $(document).ready(function () {
+        $('#carouselLantai').carousel();
+
+        $('#carouselLantai').on('slide.bs.carousel', function (event) {
+            var floorId = event.to + 5;
+            showFloor(floorId);
+        });
+
+        function showFloor(floorId) {
+            $('[id^="carouselLantai-"]').hide();
+            $('#carouselLantai-' + floorId).show();
+        }
+    });
+</script>

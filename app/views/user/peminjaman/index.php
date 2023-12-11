@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
+    <title>
+        <?= $data['judul']; ?>
+    </title>
     <style>
         body {
             background-color: #2A1A5E;
@@ -224,43 +221,3 @@
         </div>
     </div>
 </body>
-<script>
-    // Data Picker Initialization
-    $('.datepicker').datepicker({
-    inline: true
-    });
-
-    //select date
-    $(document).ready(function() {
-        $('#myDateInput').datepicker({
-            format: 'yyyy-mm-dd',
-            autoclose: true,
-            todayHighlight: true,
-            templates: {
-                leftArrow: '<i class="fas fa-chevron-left"></i>',
-                rightArrow: '<i class="fas fa-chevron-right"></i>'
-            }
-        });
-    });
-
-    //Search
-    $(document).ready(function(){
-        $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-
-    //Search
-    $(document).ready(function(){
-    $("#myInput").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $("#myTable tr").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
-    });
-  });
-</script>
-</html>
