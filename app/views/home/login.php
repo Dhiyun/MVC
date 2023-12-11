@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css">
-    <link href="assets/icon/logo.png" rel="icon">
+    <title>
+        <?= $data['judul']; ?>
+    </title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -305,13 +298,3 @@
             </div>
         </div>
     </div>
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        setTimeout(function () {
-            document.querySelector('.alert').style.display = 'none';
-        }, 5000);
-    </script>
-
-</body>
-
-</html>

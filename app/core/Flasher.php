@@ -22,13 +22,13 @@ class Flasher {
             echo '<div class="modal fade" id="flashModal" tabindex="-1" role="dialog" aria-labelledby="flashModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header" style="border: none;">
                                 <h5 class="modal-title" id="flashModalLabel"> ' . $_SESSION['flash']['aksi'] . ' ' . $_SESSION['flash']['aksi'] . '</h5>
                             </div>
                             <div class="modal-body">
                                 <strong>' . $_SESSION['flash']['pesan'] . ' ' . $_SESSION['flash']['aksi'] . '</strong>
                             </div>
-                            <div class="modal-footer" style="display: flex; justify-content: center;">
+                            <div class="modal-footer" style="display: flex; justify-content: center; border: none;">
                                 <button type="button" class="btn" style="display: flex; background-color: #2A1A5E; color: #fff;" onclick="closeModal()">Tutup</button>
                             </div>
                         </div>

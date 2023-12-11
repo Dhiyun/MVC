@@ -5,6 +5,7 @@ include '../app/fungsi/pesan_kilat.php';
 class Log extends Controller {
     public function index() {
         $data['judul'] = 'Login';
+        $this->view('home/templates/master', $data);
         $this->view('home/login', $data);
     }
 

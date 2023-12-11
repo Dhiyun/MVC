@@ -5,6 +5,7 @@ include '../app/fungsi/pesan_kilat.php';
 class Reg extends Controller {
     public function index() {
         $data['judul'] = 'Register';
+        $this->view('home/templates/master', $data);
         $this->view('home/register', $data);
     }
 
