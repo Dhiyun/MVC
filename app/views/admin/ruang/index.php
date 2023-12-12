@@ -84,7 +84,7 @@
     </div>
 
     <div class="row px-3 mt-3">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <?php Flasher::flash(); ?>
         </div>
     </div>
