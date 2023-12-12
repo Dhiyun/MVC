@@ -25,6 +25,25 @@
             border: none;
             padding-left: 0;
         }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+        
+        .navbar-nav .nav-item .underline {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 3px;
+            background-color: #000;
+            width: 0;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-item:hover .underline {
+            width: 100%;
+            left: 0;
+        }
     </style>
 </head>
 
