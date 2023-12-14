@@ -268,7 +268,7 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            <input type="text" class="form-control" name="username" placeholder="Username">
+                            <input type="text" class="form-control" name="username" placeholder="NIP/NIM">
                         </div>
                         <div class="input-container">
                             <div class="icon">
