@@ -31,7 +31,7 @@
         .btn-edit {
             background-color: #FBE555;
             color: #000;
-            width: 80px;
+            width: 42px;
             height: 35px;
             font-size: 14px;
         }
@@ -44,7 +44,7 @@
         .btn-delete {
             background-color: #A33B03;
             color: #fff;
-            width: 100px;
+            width: 42px;
             height: 35px;
             font-size: 14px;
         }
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <div class="table-responsive small pt-3 px-3">
+    <div class="table-responsive small pt-3 px-3" >
         <table id="tableruang" class="table rounded" style="border-radius: 15px; background-color: #000;">
             <thead>
                 <tr>
@@ -127,12 +127,12 @@
                             <a class="btn btn-edit btn-xs" data-bs-toggle="modal" data-kode="<?= $row['kode'] ?>"
                                 data-bs-target="#editModal<?= $row['kode'] ?>">
                                 <img src="../assets/icon/ic-edit-hitam.png" alt="" style="width: 16px; margin-bottom: 2px;">
-                                Edit
+                                
                             </a>
                             <a href="<?= RUANGURL ?>/hapus/<?= $row['kode'] ?>"
                                 onclick="javascript:return confirm('Hapus Data Ruang ?');"
                                 class="btn btn-delete btn-xs"><img src="../assets/icon/ic-delete.png" alt="" srcset=""
-                                    style="width: 16px; width:16px; margin-bottom: 3px;"> Delete</a>
+                                    style="width: 16px; margin-bottom: 2px;"> </a>
                         </td>
                     </tr>
                 <?php } ?>

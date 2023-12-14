@@ -45,7 +45,7 @@
         .btn-read {
             background-color: #00AA25;
             color: #fff;
-            width: 90px;
+            width: 42px;
             height: 35px;
             font-size: 14px;
         }
@@ -58,7 +58,7 @@
         .btn-edit {
             background-color: #FBE555;
             color: #000;
-            width: 80px;
+            width: 42px;
             height: 35px;
             font-size: 14px;
         }
@@ -71,7 +71,7 @@
         .btn-delete {
             background-color: #A33B03;
             color: #fff;
-            width: 100px;
+            width: 42px;
             height: 35px;
             font-size: 14px;
         }
@@ -155,17 +155,17 @@
                         <td>
                             <button type="button" class="btn btn-read btn-xs" data-bs-toggle="modal"
                                 data-bs-target="#readModal<?= $row['id'] ?>">
-                                <img src="../assets/icon/ic-read.png" alt="" style="width: 16px; margin-bottom: 2px;"> Read
+                                <img src="../assets/icon/ic-read.png" alt="" style="width: 17px; margin-bottom: 2px; margin-right: 3px;"> 
                             </button>
                             <button type="button" class="btn btn-edit btn-xs" data-bs-toggle="modal"
                                 data-bs-target="#editModal<?= $row['id'] ?>">
-                                <img src="../assets/icon/ic-edit-hitam.png" alt="" style="width: 16px; margin-bottom: 2px;">
-                                Edit
+                                <img src="../assets/icon/ic-edit-hitam.png" alt="" style="width: 17px; margin-bottom: 2px; margin-right: 3px;">
+                                
                             </button>
                             <a href="<?= JADWALURL ?>/hapus/<?= $row['id'] ?>"
                                 onclick="javascript:return confirm('Hapus Data Ruang ?');"
-                                class="btn btn-delete btn-xs"><img src=".assets/icon/ic-delete.png" alt="" srcset=""
-                                    style="width: 16px; width:16px; margin-bottom: 3px;"> Delete</a>
+                                class="btn btn-delete btn-xs"><img src="../assets/icon/ic-delete.png" alt="" srcset=""
+                                    style=" width:17px; margin-bottom: 2px; margin-right: 3px;"> </a>
                         </td>
                     </tr>
                 <?php } ?>

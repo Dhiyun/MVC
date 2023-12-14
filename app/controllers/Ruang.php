@@ -15,6 +15,7 @@ class Ruang extends Controller
                 exit;
             }
         } catch (PDOException $e) {
+            print_r($e->getMessage());
             Flasher::setFlash('Ruang Tidak Sesuai atau Sudah Ada', '', 'info');
             header('Location: ' . ADMINURL . '/ruang');
             exit;

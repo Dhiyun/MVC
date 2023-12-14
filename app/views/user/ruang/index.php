@@ -80,6 +80,10 @@
         .col-md-4 .container {
             width: 199px;
         }
+
+        .custom-select {
+            background-image: url("/DesainWeb/MVC/public/assets/icon/arrow-down.svg");
+        }
     </style>
 </head>
 <body>
@@ -166,20 +170,23 @@
         </div>
     </div>
 
+    <?php foreach ($data['rng'] as $row) : ?>
     <!-- Modal Detail-->
     <div class="modal fade" id="detailModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
         role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="border: none;">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Nama Ruang??</h1>
+                <h1 class="modal-title fs-5" id="readModalLabel<?= $row['kode'] ?>">
+                <b><?= $row['nama_ruangan'] ?></b> 
+                </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body border-bottom">
                     <div class="row mb-2">
                         <div class="col-md-2">
                             <label for="recipient-name" class="col-form-label">Hari:</label>
-                            <select class="form-select text-modal-custom" name="lantai" aria-label="Default select example">
+                            <select class="form-select text-modal-custom" name="hari" value="<?= $row['hari'] ?>" aria-label="Default select example">
                                 <option selected>Hari</option>
                             </select>
                         </div>
@@ -189,35 +196,35 @@
                 <form action="fungsi/tambah.php?ruang=tambah" method="post">
                     <div class="modal-body" style="font-size: 16px">
                         <div class="row mb-3">
-                            <div class="col-md-6">
+                            <div class="col-md-6" styl>
                                 <label for="recipient-name" class="col-form-label">Matkul:</label>
-                                <select class="form-select text-modal-custom" name="lantai" aria-label="Default select example">
+                                <select class="form-select text-modal-custom custom-select" name="matkul" value="<?= $row['matkul'] ?>" style="background-color: #2A1A5E; color: #fff; "aria-label="Default select example">
                                     <option selected>Matkul</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Dosen:</label>
-                                <input type="text" name="kapasitas" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="text" name="nama_dosen" class="form-control text-modal-custom" value="<?= $row['nama_dosen'] ?>"  id="recipient-name">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Jam Mulai: </label>
-                                <input type="text" name="kapasitas" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="text" name="waktu_mulai" class="form-control text-modal-custom" value="<?= $row['waktu_mulai'] ?>" id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Kapasitas:</label>
-                                <input type="text" name="kapasitas" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="text" name="kapasitas" class="form-control text-modal-custom" value="<?= $row['kapasitas'] ?>" id="recipient-name">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Jam Selesai:</label>
-                                <input type="text" name="fasilitas" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="text" name="waktu_selesai" class="form-control text-modal-custom" value="<?= $row['waktu_selesai'] ?>" id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Fasilitas:</label>
-                                <input type="text" name="fasilitas" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="text" name="fasilitas" class="form-control text-modal-custom" value="<?= $row['fasilitas'] ?>" id="recipient-name">
                             </div>
                         </div>
                     </div>
@@ -225,4 +232,5 @@
             </div>
         </div>
     </div>
+    <?php endforeach; ?>
 </body>

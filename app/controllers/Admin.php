@@ -113,7 +113,7 @@ class Admin extends Controller
 
         $this->view('admin/templates/header', $data);
         $this->view('admin/templates/sidebar');
-        $this->view('admin/peminjaman/index', $data);
+        $this->view('admin/history/index', $data);
         $this->view('admin/templates/footer');
     }
 }
