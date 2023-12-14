@@ -4,6 +4,7 @@ define('BASEURL', 'http://localhost/Semester3/MVC/public/');
 //Admin
 define('ADMINURL', 'http://localhost/Semester3/MVC/public/admin');
 define('RUANGURL', 'http://localhost/Semester3/MVC/public/ruang');
+define('DOSENURL', 'http://localhost/Semester3/MVC/public/dosen');
 define('JADWALURL', 'http://localhost/Semester3/MVC/public/jadwal');
 
 //User

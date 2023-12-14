@@ -1,7 +1,4 @@
 <head>
-    <title>
-        <?= $data['judul']; ?>
-    </title>
     <style>
         .btn-batal {
             background-color: #2A1A5E;

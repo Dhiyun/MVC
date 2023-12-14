@@ -35,4 +35,4 @@
             $(".toggle[data-kode='" + kodeRuangan + "']").slideToggle("slow");
         });
     });
-</script>>
+</script>

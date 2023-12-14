@@ -1,9 +1,4 @@
-<?php
-// include_once("config/koneksi.php");
-?>
-
 <head>
-    <title>History</title>
     <style>
         .btn-batal {
             background-color: #2A1A5E;

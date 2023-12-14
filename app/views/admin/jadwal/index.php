@@ -1,7 +1,4 @@
 <head>
-    <title>
-        <?= $data['judul']; ?>
-    </title>
     <style>
         .btn-batal {
             background-color: #2A1A5E;
@@ -117,7 +114,7 @@
     </div>
 
     <div class="row px-3 mt-3">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <?php Flasher::flash(); ?>
         </div>
     </div>

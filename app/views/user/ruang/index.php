@@ -1,7 +1,4 @@
 <head>
-    <title>
-        <?= $data['judul']; ?>
-    </title>
     <style>
         body {
             background-color: #2A1A5E;
@@ -16,7 +13,7 @@
             background-color: #FB9224;
             color: #fff;
         }
-        
+
         .search {
             border-radius: 10px;
             background: #D9D9D9;
@@ -55,35 +52,37 @@
 
         .carousel-item p {
             margin-top: -2.5px;
+            color: #000;
         }
-        
-        <?php for ($i = 6; $i <= 8; $i++) { ?>
-        #carouselLantai-<?php echo "$i" ?> {
-            display: none;
-        }
-        <?php } ?>
 
-        <?php for ($i = 5; $i <= 8; $i++) { ?>
-        .hide-picture-<?php echo "$i" ?> {
-            <?php if($i != 7) { ?>
-                display: none;
-            <?php } ?>
-        }
-        <?php } ?>
+        <?php foreach ($data['lnt'] as $row) : ?>
+            <?php if ($row['lantai'] >= 6 && $row['lantai'] <= 8) : ?>
+                #carouselLantai-<?php echo $row['lantai']; ?> {
+                    display: none;
+                }
+            <?php endif; ?>
+        <?php endforeach; ?>
+
+        <?php foreach ($data['lnt'] as $row) : ?>
+            .hide-picture-<?php echo $row['lantai']; ?> {
+                <?php if ($row['lantai'] != 7) : ?>
+                    display: none;
+                <?php endif; ?>
+            }
+        <?php endforeach; ?>
 
         .carousel-item.active,
         .carousel-item-next,
-        .carousel-item-prev{
+        .carousel-item-prev {
             display: block;
         }
 
-        .col-md-4 .container{
+        .col-md-4 .container {
             width: 199px;
         }
     </style>
 </head>
 <body>
-<title><?= $data['judul'] ?></title>
     <div class="container mb-5">
         <div class="card mt-4" style="border: 0; border-radius: 20px;">
             <div class="card-body">
@@ -105,63 +104,64 @@
                                 <div id="carouselLantai" class="carousel slide" data-ride="carousel">
                                     <div class="box-carousel">
                                         <div class="carousel-inner" role="listbox">
-                                            <?php for ($i = 5; $i <= 8; $i++) : ?>
-                                            <div class="carousel-item <?php echo ($i == 5) ? 'active' : ''; ?> text-center pt-2">
-                                                <p>Lantai <?php echo $i; ?></p>
-                                            </div>
-                                            <?php endfor; ?>
+                                            <?php foreach ($data['lnt'] as $row) : ?>
+                                                <div class="carousel-item <?= ($row['lantai'] == 5) ? 'active' : ''; ?> text-center pt-2">
+                                                    <p>Lantai <?= $row['lantai']; ?></p>
+                                                </div>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselLantai" data-bs-slide="prev">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                            <path d="M19.7749 22.3999L19.7749 14.6124V7.59993C19.7749 6.39993 18.3249 5.79993 17.4749 6.64993L10.9999 13.1249C9.9624 14.1624 9.9624 15.8499 10.9999 16.8874L13.4624 19.3499L17.4749 23.3624C18.3249 24.1999 19.7749 23.5999 19.7749 22.3999Z" fill="#292D32"/>
-                                        </svg>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselLantai" data-bs-slide="next">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                            <path d="M10.2251 7.60007L10.2251 15.3876V22.4001C10.2251 23.6001 11.6751 24.2001 12.5251 23.3501L19.0001 16.8751C20.0376 15.8376 20.0376 14.1501 19.0001 13.1126L16.5376 10.6501L12.5251 6.63757C11.6751 5.80007 10.2251 6.40007 10.2251 7.60007Z" fill="#292D32"/>
-                                        </svg>
-                                    </button>
+                                    <?php foreach ($data['lnt'] as $row) : ?>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLantai" data-bs-slide="prev" data-carousel-index="<?= $row['lantai']; ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M19.7749 22.3999L19.7749 14.6124V7.59993C19.7749 6.39993 18.3249 5.79993 17.4749 6.64993L10.9999 13.1249C9.9624 14.1624 9.9624 15.8499 10.9999 16.8874L13.4624 19.3499L17.4749 23.3624C18.3249 24.1999 19.7749 23.5999 19.7749 22.3999Z" fill="#292D32"/>
+                                            </svg>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselLantai" data-bs-slide="next" data-carousel-index="<?= $row['lantai']; ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M10.2251 7.60007L10.2251 15.3876V22.4001C10.2251 23.6001 11.6751 24.2001 12.5251 23.3501L19.0001 16.8751C20.0376 15.8376 20.0376 14.1501 19.0001 13.1126L16.5376 10.6501L12.5251 6.63757C11.6751 5.80007 10.2251 6.40007 10.2251 7.60007Z" fill="#292D32"/>
+                                            </svg>
+                                        </button>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </nav>
                 
-                <?php for ($i = 5; $i <= 8; $i++) { ?>
-                <div id="carouselLantai-<?php echo $i; ?>">
-                    <div class="text-center pb-5">
-                        <img src="../assets/img/denah-lt-<?php echo $i; ?>.png">
-                        <img src="../assets/img/ket-lt-<?php echo $i; ?>.png">
-                        <br>
-                        <img class="hide-picture-<?php echo $i;?>" src="../assets/img/ket-2-lt-<?php echo $i; ?>.png">
+                <?php foreach ($data['lnt'] as $row) : ?>
+                    <div id="carouselLantai-<?php echo $row['lantai']; ?>">
+                        <div class="text-center pb-5">
+                            <img src="../assets/img/denah-lt-<?= $row['lantai']; ?>.png">
+                            <img src="../assets/img/ket-lt-<?= $row['lantai']; ?>.png">
+                            <br>
+                            <img class="hide-picture-<?php echo $row['lantai']; ?>" src="../assets/img/ket-2-lt-<?= $row['lantai']; ?>.png">
+                        </div>
+                        <div class="table-responsive small pt-3 px-3">
+                            <table class="table"> 
+                                <thead>
+                                    <tr>
+                                        <th scope="col">KODE RUANG</th>
+                                        <th scope="col">NAMA RUANG</th>
+                                        <th scope="col">AKSI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($data['rng'] as $row2) : 
+                                        if($row2['lantai'] == $row['lantai']) {?>
+                                        <tr>
+                                            <td><?= $row2['kode']; ?></td>
+                                            <td><?= $row2['nama_ruangan']; ?></td>
+                                            <td>
+                                                <button type="button" class="btn btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal" data-bs-whatever="@mdo">Detail</button>
+                                            </td>
+                                        </tr>
+                                    <?php } endforeach; ?>
+                                </tbody>  
+                            </table>
+                        </div>
                     </div>
-                    <div class="table-responsive small pt-3 px-3">
-                        <table class="table"> 
-                            <thead>
-                                <tr>
-                                    <th scope="col">KODE RUANG</th>
-                                    <th scope="col">NAMA RUANG</th>
-                                    <th scope="col">AKSI</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                       <?php echo ($i == 5) ? 'Boleh...' : 'Mana Bisa?'; ?>
-                                    </td>
-                                    <td>
-                                        Perkutut
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal" data-bs-whatever="@mdo"> Detail</button>
-                                    </td>
-                                </tr>
-                            </tbody>  
-                        </table>
-                    </div>
-                </div>
-                <?php } ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

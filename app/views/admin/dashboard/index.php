@@ -1,9 +1,3 @@
-<head>
-    <title>
-        <?= $data['judul'] ?>
-    </title>
-</head>
-
 <main class="col-md-10" style="background-color: #F5F5F5">
     <div class="row pt-3 pb-2 mb-3 px-1 border-bottom">
         <div class="d-flex p-1 justify-content-center align-items-center custom-title-box">
@@ -24,9 +18,8 @@
                         </div>
                         <div class="col my-3">
                             <h5 class="card-title" style="font-size: 17px;">RUANG KOSONG</h5>
-                            <p class="card-text">?</p>
+                            <p class="card-text"><?= $data['r'] ?></p>
                         </div>
-
                     </div>
                 </div>
             </div>

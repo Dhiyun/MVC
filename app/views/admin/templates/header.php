@@ -2,10 +2,13 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
+    <title>
+        <?= $data['judul']; ?>
+    </title>
     <script src="../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
@@ -162,6 +165,14 @@
 
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
+        }
+
+        .nav-item.active {
+            background-color: #2D2852 !important;
+        }
+
+        .nav-item:hover {
+            background-color: #2D2852;
         }
     </style>
 

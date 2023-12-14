@@ -1,3 +1,4 @@
+</body>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -17,16 +18,16 @@
         font-family: 'Montserrat', sans-serif;
         color: #fff;
     }
-    </style>
-    <footer class="text-center text-lg-start text-muted">
-        <section class="">
-            <div class="container-fluid">
+</style>
+<footer class="text-center text-lg-start text-muted">
+    <section class="">
+        <div class="container-fluid">
             <!-- Grid row -->
             <div class="row">
                 <!-- Grid column -->
-                <div class="col-sm-4 mx-auto mt-5 display-flex align-items-center"
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        <img src="../assets/img/logo-p-copy.png" style="width: 200px; height; 200px;">
+                <div class="col-sm-4 mx-auto mt-5 display-flex align-items-center" <h6
+                    class="text-uppercase fw-bold mb-4">
+                    <img src="../assets/img/logo-p-copy.png" style="width: 200px; height; 200px;">
                     </h6>
                     <p class="mt-3">
                         "Space Go", sebuah situs web untuk pemesanan ruangan di Jurusan Teknologi Informasi
@@ -36,10 +37,7 @@
                         bagi warga Polinema.
                     </p>
                 </div>
-                
-                <div class="col-sm-1">
-
-                </div>
+                <div class="col-sm-1"></div>
 
                 <!-- Grid column -->
                 <div class="col-sm-4 mx-auto mb-4 mt-5 
@@ -65,7 +63,6 @@
                     </p>
                 </div>
 
-                
                 <!-- Grid column -->
                 <div class="col-sm-2 mx-auto mb-4 mt-5">
                     <!-- Links -->
@@ -103,12 +100,12 @@
                             <path
                                 d="M5.12833 12.0282C7.91916 -0.240179 26.095 -0.226012 28.8717 12.0423C30.5008 19.239 26.0242 25.3307 22.1 29.099C19.2525 31.8473 14.7475 31.8473 11.8858 29.099C7.97583 25.3307 3.49916 19.2248 5.12833 12.0282Z"
                                 stroke="white" stroke-width="3" />
-                        </svg>Jl. Soekarno Hatta</p>
+                        </svg>Jl. Soekarno Hatta
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Section: Links  -->
 
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: #1b1831; color: #fff;">
@@ -139,53 +136,13 @@
             }
         );
 
+        //Caraousel Lantai
         $('.submit').on('click', function () {
             $('html, body').animate({
                 scrollTop: $('#long-content').offset().top - 50
             }, 0);
         });
-    });
 
-    // Data Picker Initialization
-    $('.datepicker').datepicker({
-        inline: true
-    });
-
-    //select date
-    $(document).ready(function() {
-        $('#myDateInput').datepicker({
-            format: 'yyyy-mm-dd',
-            autoclose: true,
-            todayHighlight: true,
-            templates: {
-                leftArrow: '<i class="fas fa-chevron-left"></i>',
-                rightArrow: '<i class="fas fa-chevron-right"></i>'
-            }
-        });
-    });
-
-    //Search
-    $(document).ready(function(){
-        $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-
-    //Search
-    $(document).ready(function(){
-        $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-
-    //Caraousel Lantai
-    $(document).ready(function () {
         $('#carouselLantai').carousel();
 
         $('#carouselLantai').on('slide.bs.carousel', function (event) {
@@ -197,5 +154,55 @@
             $('[id^="carouselLantai-"]').hide();
             $('#carouselLantai-' + floorId).show();
         }
+
+        // var i = 5;
+
+        // $('.carousel-control-prev').on('click', function () {
+        //     i = (i > 5) ? i - 1 : 8; // Kurangi i, tetapi jika kurang dari 5, kembalikan ke 8
+        //     console.log('Nilai carousel-index:', i);
+        // });
+
+        // $('.carousel-control-next').on('click', function () {
+        //     i = (i < 8) ? i + 1 : 5; // Tambah i, tetapi jika lebih dari 8, kembalikan ke 5
+        //     console.log('Nilai carousel-index:', i);
+        // });
+
+        //Select Date
+        $('#myDateInput').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+            templates: {
+                leftArrow: '<i class="fas fa-chevron-left"></i>',
+                rightArrow: '<i class="fas fa-chevron-right"></i>'
+            }
+        });
+
+        //Search
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
     });
+
+    // Data Picker Initialization
+    $('.datepicker').datepicker({
+        inline: true
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('myForm').submit();
+    });
+
+    // //Search
+    // $(document).ready(function () {
+    //     $("#myInput").on("keyup", function () {
+    //         var value = $(this).val().toLowerCase();
+    //         $("#myTable tr").filter(function () {
+    //             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    //         });
+    //     });
+    // });
 </script>

@@ -14,9 +14,14 @@ class User extends Controller {
                 
         $data['judul'] = 'Home';
 
+        $this->view('user/templates/header', $data);
         $this->view('user/templates/navbar');
         $this->view('user/dashboard/index', $data);
         $this->view('user/templates/footer');
+    }
+
+    public function getByLantai($lantai) {
+        echo $lantai;
     }
 
     public function ruang()
@@ -28,9 +33,11 @@ class User extends Controller {
         $model = $this->model('RuangM');
 
         $data['rng'] = $model->getAllRuangFasilitas();
+        // $data['rbl'] = $model->getByLantai();
         $data['lnt'] = $model->getAllLantai();
         $data['fsl'] = $model->getAllFasilitas();
 
+        $this->view('user/templates/header', $data);
         $this->view('user/templates/navbar');
         $this->view('user/ruang/index', $data);
         $this->view('user/templates/footer');
@@ -48,6 +55,7 @@ class User extends Controller {
         $data['jdwlp'] = $model->getAllJadwalPivot();
         $data['rng'] = $model->getAllRuangan();
 
+        $this->view('user/templates/header', $data);
         $this->view('user/templates/navbar');
         $this->view('user/peminjaman/index', $data);
         $this->view('user/templates/footer');
@@ -65,6 +73,7 @@ class User extends Controller {
         // $data['jdwlp'] = $model->getAllJadwalPivot();
         // $data['rng'] = $model->getAllRuangan();
 
+        $this->view('user/templates/header', $data);
         $this->view('user/templates/navbar');
         $this->view('user/history/index', $data);
         $this->view('user/templates/footer');

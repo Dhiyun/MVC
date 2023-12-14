@@ -9,7 +9,7 @@ class RuangM
         $this->db = new Database;
     }
 
-    public function getCountRuang() {
+    public function getCountPeminjaman() {
         $this->db->query("SELECT COUNT(*) as hitung FROM ruangan");
         $this->db->execute();
         $result = $this->db->single();
@@ -36,21 +36,6 @@ class RuangM
     public function getAllFasilitas()
     {
         $this->db->query("SELECT * FROM fasilitas");
-        return $this->db->resultSet();
-    }
-
-    public function getByLantai($lantai)
-    {
-        $this->db->query("SELECT dr.*, r.*, GROUP_CONCAT(f.nama_barang) as nama_barang
-        FROM ruangan r
-        LEFT JOIN detail_ruangan dr ON dr.kode_ruangan = r.kode
-        LEFT JOIN fasilitas f ON dr.id_fasilitas = f.id
-        WHERE lantai = :lantai
-        GROUP BY r.kode
-        ORDER BY lantai, kode ASC");
-
-        $this->db->bind('lantai', $lantai);
-        $this->db->execute();
         return $this->db->resultSet();
     }
 

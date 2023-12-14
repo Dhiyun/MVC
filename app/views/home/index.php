@@ -1,7 +1,4 @@
 <head>
-    <title>
-        <?= $data['judul']; ?>
-    </title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -88,28 +85,20 @@
             transition: background-color 0.3s ease;
         }
 
-        .btn-login {
+        .btn-lets {
             background-color: #2A1A5E;
             color: #FFFFFF;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .btn-register {
-            background-color: #FB9224;
-            color: #FFFFFF;
-        }
-
-        .btn-login:hover {
+        .btn-lets:hover {
             background-color: #242041;
-        }
-
-        .btn-register:hover {
-            background-color: #A76118;
+            transform: scale(1.05);
         }
     </style>
 </head>
 
 <body>
-
     <div class="container">
         <div class="logo">
             <div class="custom-div">
@@ -122,13 +111,16 @@
         <div class="text">
             <h2 class="w3-margin"><b>What Website is This?</b></h2>
             <p class="w3-xlarge">
-            Ayo berkenalan dengan website "Space Go", sebuah situs web untuk pemesanan ruangan di Jurusan Teknologi Informasi Politeknik Negeri Malang.
-            Jika Anda membutuhkan ruangan untuk acara atau rapat, "Space Go" adalah wadah yang tepat bagi warga Polinema. 🚀✨
+                Ayo berkenalan dengan website "Space Go", sebuah situs web untuk pemesanan ruangan di Jurusan Teknologi
+                Informasi Politeknik Negeri Malang.
+                Jika Anda membutuhkan ruangan untuk acara atau rapat, "Space Go" adalah wadah yang tepat bagi warga
+                Polinema. 🚀✨
             </p>
         </div>
         <div class="row">
             <a href="<?= BASEURL ?>log">
-                <button class="button btn-login"><b>Let’s Go</b></button>
+                <button class="button btn-lets"><b>Let’s Go</b></button>
             </a>
         </div>
     </div>
+</body>

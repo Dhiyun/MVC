@@ -1,7 +1,4 @@
 <head>
-    <title>
-        <?= $data['judul']; ?>
-    </title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -519,6 +516,5 @@
             </div>
         </div>
     </div>
-
     <?php Flasher::modal(); ?>
 </body>

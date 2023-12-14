@@ -1,7 +1,4 @@
 <head>
-    <title>
-        <?= $data['judul']; ?>
-    </title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -169,6 +166,7 @@
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            transition: transform 0.3s ease-in-out;
         }
 
         .form-container.sign-in .reg {
@@ -183,14 +181,17 @@
             padding-left: 10px;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            transition: transform 0.3s ease-in-out;
         }
 
         .form-container.sign-in .submit:hover {
             background-color: #242041;
+            transform: scale(1.05);
         }
 
         .form-container.sign-in .reg:hover {
             background-color: #a76118;
+            transform: scale(1.05);
         }
 
         .sign-in .custom-div {
@@ -223,7 +224,6 @@
 </head>
 
 <body>
-
     <div class="container" id="container">
         <div class="sign-in">
             <div class="custom-div">
@@ -288,7 +288,6 @@
                             </div>
                             <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
-                        <a class="fp" href="#" style="font-size: 12px; color:#000;">Forget Password?</a>
                     </div>
                     <div class="row" style ="align-self: bottom; margin-right: 10px; gap: 10px; position: absolute; bottom: 40px; right: 80px;">
                         <a class="reg" href="<?= BASEURL ?>reg">REGISTER</a>
