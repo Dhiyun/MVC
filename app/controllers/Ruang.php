@@ -24,12 +24,18 @@ class Ruang extends Controller
 
     public function hapus($kode)
     {
-        if ($this->model("RuangM")->hapusRuang($kode) > 0) {
-            Flasher::setFlash('Ruang Berhasil', 'Dihapus', 'success');
-            header('Location: ' . ADMINURL . '/ruang');
-            exit;
-        } else {
-            Flasher::setFlash('Ruang Gagal', 'Dihapus', 'success');
+        try {
+            if ($this->model("RuangM")->hapusRuang($kode) > 0) {
+                Flasher::setFlash('Ruang Berhasil', 'Dihapus', 'success');
+                header('Location: ' . ADMINURL . '/ruang');
+                exit;
+            } else {
+                Flasher::setFlash('Ruang Gagal', 'Dihapus', 'success');
+                header('Location: ' . ADMINURL . '/ruang');
+                exit;
+            }
+        } catch (PDOException $e) {
+            Flasher::setFlash('Ruang Sedang Dipinjam', '', 'info');
             header('Location: ' . ADMINURL . '/ruang');
             exit;
         }

@@ -44,41 +44,20 @@ class JadwalM {
         return $this->db->resultSet();
     }
 
-    public function tambahJadwal($data) {
-        var_dump($_POST);
-        $nama_kelas = $_POST['nama_kelas'];
-        $prodi = $_POST['prodi'];
-        $nama_dosen = $_POST['nama_dosen'];
+    public function tambahJadwal($data)
+    {
+        $this->db->query("CALL tambahJadwal(:kode_ruang, :nama_kelas, :prodi, :nama_dosen, :hari, :waktu_mulai, :waktu_selesai, :matkul)");
+        $this->db->bind(':kode_ruang', $data['kode_ruang']);
+        $this->db->bind(':nama_kelas', $data['nama_kelas']);
+        $this->db->bind(':prodi', $data['prodi']);
+        $this->db->bind(':nama_dosen', $data['nama_dosen']);
+        $this->db->bind(':hari', $data['hari']);
+        $this->db->bind(':waktu_mulai', $data['waktu_mulai']);
+        $this->db->bind(':waktu_selesai', $data['waktu_selesai']);
+        $this->db->bind(':matkul', $data['matkul']);
 
-        $querydosen = "SELECT kode FROM dosen WHERE nama_dosen = :nama_dosen";
-        $this->db->query($querydosen);
-        $this->db->bind('nama_dosen', $nama_dosen);
-        $kode_dosen_result = $this->db->single();
-
-        $querykelas = "SELECT id FROM kelas WHERE nama_kelas = :nama_kelas AND prodi = :prodi";
-        $this->db->query($querykelas);
-        $this->db->bind('nama_kelas', $nama_kelas);
-        $this->db->bind('prodi', $prodi);
-        $id_kelas_result = $this->db->single();
-
-        if($id_kelas_result && $kode_dosen_result) {
-            $id_kelas = $id_kelas_result['id'];
-            $kode_dosen = $kode_dosen_result['kode'];
-
-            $query = "INSERT INTO jadwal VALUES 
-            ('', :kode_ruang, :id_kelas, :kode_dosen, :hari, :waktu_mulai, :waktu_selesai, :matkul)";
-            $this->db->query($query);
-            $this->db->bind('kode_ruang', $data['kode_ruang']);
-            $this->db->bind('id_kelas', $id_kelas);
-            $this->db->bind('kode_dosen', $kode_dosen);
-            $this->db->bind('hari', $data['hari']);
-            $this->db->bind('waktu_mulai', $data['waktu_mulai']);
-            $this->db->bind('waktu_selesai', $data['waktu_selesai']);
-            $this->db->bind('matkul', $data['matkul']);
-
-            $this->db->execute();
-            return $this->db->rowCount();
-        }
+        $this->db->execute();
+        return $this->db->rowCount();
     }
 
     public function hapusJadwal($id) {
@@ -90,47 +69,20 @@ class JadwalM {
         return $this->db->rowCount();
     }
 
-    public function editJadwal($data) {
-        $nama_kelas = $_POST['nama_kelas'];
-        $prodi = $_POST['prodi'];
-        $nama_dosen = $_POST['nama_dosen'];
+    public function editJadwal($data)
+    {
+        $this->db->query("CALL editJadwal(:kode_ruang, :nama_kelas, :prodi, :nama_dosen, :hari, :waktu_mulai, :waktu_selesai, :matkul, :id)");
+        $this->db->bind(':kode_ruang', $data['kode_ruang']);
+        $this->db->bind(':nama_kelas', $data['nama_kelas']);
+        $this->db->bind(':prodi', $data['prodi']);
+        $this->db->bind(':nama_dosen', $data['nama_dosen']);
+        $this->db->bind(':hari', $data['hari']);
+        $this->db->bind(':waktu_mulai', $data['waktu_mulai']);
+        $this->db->bind(':waktu_selesai', $data['waktu_selesai']);
+        $this->db->bind(':matkul', $data['matkul']);
+        $this->db->bind(':id', $data['id']);
 
-        $querydosen = "SELECT kode FROM dosen WHERE nama_dosen = :nama_dosen";
-        $this->db->query($querydosen);
-        $this->db->bind('nama_dosen', $nama_dosen);
-        $kode_dosen_result = $this->db->single();
-
-        $querykelas = "SELECT id FROM kelas WHERE nama_kelas = :nama_kelas AND prodi = :prodi";
-        $this->db->query($querykelas);
-        $this->db->bind('nama_kelas', $nama_kelas);
-        $this->db->bind('prodi', $prodi);
-        $id_kelas_result = $this->db->single();
-
-        if($id_kelas_result && $kode_dosen_result) {
-            $id_kelas = $id_kelas_result['id'];
-            $kode_dosen = $kode_dosen_result['kode'];
-
-            $query = "UPDATE jadwal SET 
-            kode_ruang = :kode_ruang,
-            id_kelas = :id_kelas,
-            kode_dosen = :kode_dosen,
-            hari = :hari,
-            waktu_mulai = :waktu_mulai,
-            waktu_selesai = :waktu_selesai,
-            matkul = :matkul
-            WHERE id = :id";
-            $this->db->query($query);
-            $this->db->bind('kode_ruang', $data['kode_ruang']);
-            $this->db->bind('id_kelas', $id_kelas);
-            $this->db->bind('kode_dosen', $kode_dosen);
-            $this->db->bind('hari', $data['hari']);
-            $this->db->bind('waktu_mulai', $data['waktu_mulai']);
-            $this->db->bind('waktu_selesai', $data['waktu_selesai']);
-            $this->db->bind('matkul', $data['matkul']);
-            $this->db->bind('id', $data['id']);
-
-            $this->db->execute();
-            return $this->db->rowCount();
-        }
+        $this->db->execute();
+        return $this->db->rowCount();
     }
 }
