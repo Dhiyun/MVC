@@ -1,7 +1,19 @@
+<head>
+    <style>
+        .icon {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            left: 462px;
+            top: 31%;
+        }
+
+    </style>
+</head>
 <div class="container">
     <div class="card mt-4" style="border: 0; border-radius: 20px;">
         <div class="card-body">
-            <nav class="navbar navbar-light" style="border-radius: 15px;">
+            <nav class="navbar navbar-light">
                 <div div class="row">
                     <div class="col-md-9">
                         <form class="form-inline">

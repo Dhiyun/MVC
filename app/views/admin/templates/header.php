@@ -284,8 +284,8 @@
             <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
         </div>
         
-        <div class="d-flex align-items-center">
-            <span class="text-white me-5" style="font-size: 16px;">Hi, Admin</span>
+        <div class="d-flex align-items-right" style="margin-right: 30px;">
+            <span class="text-white" style="font-size: 16px;">Hi, Admin</span>
         </div>
     </header>
     <div class="container-fluid" style="background-color: #F5F5F5; min-height: 100vh">

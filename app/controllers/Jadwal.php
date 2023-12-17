@@ -34,7 +34,7 @@ class Jadwal extends Controller {
                 header('Location: '.ADMINURL.'/jadwal');
                 exit;
             } elseif($model->editJadwal($_POST) == 0) {
-                Flasher::setFlash('Tidak Ada Perubahan atau Tidak Sesuai', '', 'info');
+                Flasher::setFlash('Tidak Ada Perubahan atau Tidak Sesuai', '', 'warning');
                 header('Location: '.ADMINURL.'/jadwal');
                 exit;
             } else {

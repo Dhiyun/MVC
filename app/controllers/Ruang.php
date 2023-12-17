@@ -16,7 +16,7 @@ class Ruang extends Controller
             }
         } catch (PDOException $e) {
             print_r($e->getMessage());
-            Flasher::setFlash('Ruang Tidak Sesuai atau Sudah Ada', '', 'info');
+            Flasher::setFlash('Ruang Tidak Sesuai atau Sudah Ada', '', 'warning');
             header('Location: ' . ADMINURL . '/ruang');
             exit;
         }
@@ -30,7 +30,7 @@ class Ruang extends Controller
                 header('Location: ' . ADMINURL . '/ruang');
                 exit;
             } else {
-                Flasher::setFlash('Ruang Gagal', 'Dihapus', 'success');
+                Flasher::setFlash('Ruang Gagal', 'Dihapus', 'danger');
                 header('Location: ' . ADMINURL . '/ruang');
                 exit;
             }
@@ -51,7 +51,7 @@ class Ruang extends Controller
                 header('Location: ' . ADMINURL . '/ruang');
                 exit;
             } else {
-                Flasher::setFlash('Tidak Ada Perubahan atau Tidak Sesuai', '', 'info');
+                Flasher::setFlash('Tidak Ada Perubahan atau Tidak Sesuai', '', 'warning');
                 header('Location: ' . ADMINURL . '/ruang');
                 exit;
             }

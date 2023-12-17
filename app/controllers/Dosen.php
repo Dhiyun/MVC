@@ -15,7 +15,7 @@ class Dosen extends Controller
                 exit;
             }
         } catch (PDOException $e) {
-            Flasher::setFlash('Dosen Tidak Sesuai atau Sudah Ada', '', 'info');
+            Flasher::setFlash('Dosen Tidak Sesuai atau Sudah Ada', '', 'warning');
             header('Location: ' . ADMINURL . '/dosen');
             exit;
         }
@@ -28,7 +28,7 @@ class Dosen extends Controller
             header('Location: ' . ADMINURL . '/dosen');
             exit;
         } else {
-            Flasher::setFlash('Dosen Gagal', 'Dihapus', 'success');
+            Flasher::setFlash('Dosen Gagal', 'Dihapus', 'danger');
             header('Location: ' . ADMINURL . '/dosen');
             exit;
         }
@@ -50,7 +50,7 @@ class Dosen extends Controller
             }
         } catch (PDOException $e) {
 
-            Flasher::setFlash('Tidak Ada Perubahan atau Tidak Sesuai', '', 'info');
+            Flasher::setFlash('Tidak Ada Perubahan atau Tidak Sesuai', '', 'warning');
             header('Location: ' . ADMINURL . '/dosen');
             exit;
         }

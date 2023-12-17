@@ -1,3 +1,4 @@
+<div class="col-md-2"></div>
 <main class="col-md-10" style="background-color: #F5F5F5">
     <div class="row pt-3 pb-2 mb-3 px-1 border-bottom">
         <div class="d-flex p-1 justify-content-center align-items-center custom-title-box">

@@ -6,10 +6,26 @@
 
         .btn-detail {
             background-color: #FB9224;
+            border-radius: 10px;
             color: #fff;
         }
 
         .btn-detail:hover {
+            background-color: #FB9224;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .btn-closee {
+            background-color: #FB9224;
+            color: #fff;
+            border-radius: 20px;
+            width: 90px;
+            height: 35px;
+            font-size: 14px;
+        }
+
+        .btn-closee:hover {
             background-color: #FB9224;
             color: #fff;
         }
@@ -82,7 +98,19 @@
         }
 
         .custom-select {
-            background-image: url("/DesainWeb/MVC/public/assets/icon/arrow-down.svg");
+            background-image: url("../assets/icon/arrow-down.svg");
+        }
+
+        .modal-custom {
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            background: #ECEBEB;
+        }
+
+        .content-custom {
+            border-radius: 20px; 
+            background: #F8F8F8;
         }
     </style>
 </head>
@@ -90,7 +118,7 @@
     <div class="container mb-5">
         <div class="card mt-4" style="border: 0; border-radius: 20px;">
             <div class="card-body">
-                <nav class="navbar navbar-light" style="border-radius: 15px;">
+                <nav class="navbar navbar-light">
                     <div class="row">
                         <div class="col-md-8">
                             <form class="form-inline">
@@ -171,62 +199,66 @@
     </div>
 
     <?php foreach ($data['rng'] as $row) : ?>
+
     <!-- Modal Detail-->
     <div class="modal fade" id="detailModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
         role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
+            <div class="modal-content content-custom">
                 <div class="modal-header" style="border: none;">
                 <h1 class="modal-title fs-5" id="readModalLabel<?= $row['kode'] ?>">
-                <b><?= $row['nama_ruangan'] ?></b> 
+                    <b>Nama Ruang: <?= $row['nama_ruangan'] ?></b> 
                 </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
                 <div class="modal-body border-bottom">
                     <div class="row mb-2">
                         <div class="col-md-2">
-                            <label for="recipient-name" class="col-form-label">Hari:</label>
-                            <select class="form-select text-modal-custom" name="hari" value="<?= $row['hari'] ?>" aria-label="Default select example">
-                                <option selected>Hari</option>
+                            <!-- <label for="recipient-name" class="col-form-label">Hari:</label> -->
+                            <select class="form-select" style="border: none;" name="hari" value="<?= $row['hari'] ?>" aria-label="Default select example">
+                                <b><option selected>Hari</option></b>
                             </select>
                         </div>
                     </div>
                 </div>
                     
-                <form action="fungsi/tambah.php?ruang=tambah" method="post">
-                    <div class="modal-body" style="font-size: 16px">
+                <form action="" method="read">
+                    <div class="modal-body" style="font-weight: 700;">
                         <div class="row mb-3">
-                            <div class="col-md-6" styl>
+                            <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Matkul:</label>
-                                <select class="form-select text-modal-custom custom-select" name="matkul" value="<?= $row['matkul'] ?>" style="background-color: #2A1A5E; color: #fff; "aria-label="Default select example">
-                                    <option selected>Matkul</option>
+                                <select class="form-select custom-select" name="matkul" value="<?= $row['matkul'] ?>" style="background-color: #2A1A5E; color: #fff; "aria-label="Default select example">
+                                    <option style="color: #000; background-color: #f2f2f2;">Test</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Dosen:</label>
-                                <input type="text" name="nama_dosen" class="form-control text-modal-custom" value="<?= $row['nama_dosen'] ?>"  id="recipient-name">
+                                <input type="text" name="nama_dosen" class="form-control modal-custom" value="<?= $row['nama_dosen'] ?>"  id="recipient-name">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Jam Mulai: </label>
-                                <input type="text" name="waktu_mulai" class="form-control text-modal-custom" value="<?= $row['waktu_mulai'] ?>" id="recipient-name">
+                                <input type="date" name="waktu_mulai" class="form-control modal-custom" value="<?= $row['waktu_mulai'] ?>" id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Kapasitas:</label>
-                                <input type="text" name="kapasitas" class="form-control text-modal-custom" value="<?= $row['kapasitas'] ?>" id="recipient-name">
+                                <input type="text" name="kapasitas" class="form-control modal-custom" value="<?= $row['kapasitas'] ?>" id="recipient-name">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Jam Selesai:</label>
-                                <input type="text" name="waktu_selesai" class="form-control text-modal-custom" value="<?= $row['waktu_selesai'] ?>" id="recipient-name">
+                                <input type="date" name="waktu_selesai" class="form-control modal-custom" value="<?= $row['waktu_selesai'] ?>" id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Fasilitas:</label>
-                                <input type="text" name="fasilitas" class="form-control text-modal-custom" value="<?= $row['fasilitas'] ?>" id="recipient-name">
+                                <input type="text" name="fasilitas" class="form-control modal-custom" value="<?= $row['fasilitas'] ?>" id="recipient-name">
                             </div>
                         </div>
+                    </div>
+                    <div class="modal-footer" style="border: none;">
+                        <button type="submit" class="btn btn-closee">Close</button>
                     </div>
                 </form>
             </div>

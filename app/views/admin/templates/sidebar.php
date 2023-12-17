@@ -16,7 +16,7 @@ if (strpos($path, '/dashboard') !== false || $path === '/admin') {
 }
 ?>
 
-<div class="sidebar border-right col-md-3 col-lg-2 p-0" style="overflow-y: auto; background-color: #363062;">
+<div class="sidebar border-right col-md-3 col-lg-2 p-0" style="overflow-y: auto; background-color: #363062; position: fixed; height: 100vh; z-index: 1;">
     <div class="offcanvas-md offcanvas-end " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="sidebarMenuLabel">..</h5>

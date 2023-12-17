@@ -3,7 +3,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
     footer {
-        background-color: #2d2852;
+        background-color: #1b1831;
     }
 
     body,
@@ -20,15 +20,13 @@
     }
 </style>
 <footer class="text-center text-lg-start text-muted">
-    <section class="">
+    <!-- <section class=""> -->
         <div class="container-fluid">
             <!-- Grid row -->
             <div class="row">
                 <!-- Grid column -->
-                <div class="col-sm-4 mx-auto mt-5 display-flex align-items-center" <h6
-                    class="text-uppercase fw-bold mb-4">
+                <div class="col-sm-4 mx-auto mt-5 display-flex align-items-center"> 
                     <img src="../assets/img/logo-p-copy.png" style="width: 200px; height; 200px;">
-                    </h6>
                     <p class="mt-3">
                         "Space Go", sebuah situs web untuk pemesanan ruangan di Jurusan Teknologi Informasi
                         Politeknik Negeri Malang.
@@ -103,12 +101,13 @@
                         </svg>Jl. Soekarno Hatta
                     </p>
                 </div>
+
             </div>
         </div>
-    </section>
+    <!-- </section> -->
 
     <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: #1b1831; color: #fff;">
+    <div class="text-center p-4" style="background-color: #121021; color: #fff;">
         Copyright © 2023 Spacego, JTI
     </div>
 </footer>

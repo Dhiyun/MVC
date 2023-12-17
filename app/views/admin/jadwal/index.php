@@ -81,12 +81,21 @@
             color: #fff;
         }
 
-        .text-modal-custom {
-            font-size: 14px;
+        .modal-custom {
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            background-color: #ECEBEB;
+        }
+
+        .content-custom {
+            border-radius: 20px; 
+            background: #F8F8F8;
         }
     </style>
 </head>
 
+<div class="col-md-2"></div>
 <main class="col-md-10" style="background-color: #F5F5F5">
     <div class="row pt-3 pb-2 mb-3 px-1 border-bottom">
         <div class="d-flex p-1 justify-content-center align-items-center custom-title-box">
@@ -120,7 +129,7 @@
     </div>
 
     <div class="table-responsive small pt-3 px-3">
-        <table id="tablejadwal" class="table rounded" style="border-radius: 15px; background-color: #000;">
+        <table id="tablejadwal" class="table rounded">
             <thead>
                 <tr>
                     <th scope="col" style="background-color: #363062; color:#fff;">No.</th>
@@ -133,9 +142,9 @@
             </thead>
             <tbody>
                 <?php
-                $no = 1;
-                foreach($data['jdwl'] as $row) {
-                    ?>
+                    $no = 1;
+                    foreach($data['jdwl'] as $row) {
+                ?>
                     <tr>
                         <td>
                             <?= $no++ ?>
@@ -163,7 +172,7 @@
                                 
                             </button>
                             <a href="<?= JADWALURL ?>/hapus/<?= $row['id'] ?>"
-                                onclick="javascript:return confirm('Hapus Data Ruang ?');"
+                                onclick="javascript:return confirm('Hapus Data Jadwal ?');"
                                 class="btn btn-delete btn-xs"><img src="../assets/icon/ic-delete.png" alt="" srcset=""
                                     style=" width:17px; margin-bottom: 2px; margin-right: 3px;"> </a>
                         </td>
@@ -177,17 +186,13 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="true"
         role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Jadwal</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+            <div class="modal-content content-custom">
                 <form action="<?= JADWALURL ?>/tambah" method="post">
-                    <div class="modal-body" style="font-size: 16px">
-                        <div class="row mb-3">
+                    <div class="modal-body" style="font-weight: 700;">
+                        <div class="row mb-4 pt-4">
                             <div class="col-md-6">
-                                <label for="recipient-name" class="col-form-label">K. Ruang:</label>
-                                <select class="form-select text-modal-custom" name="kode_ruang"
+                                <label for="recipient-name" class="col-form-label">Kode Ruang:</label>
+                                <select class="form-select modal-custom" name="kode_ruang"
                                     aria-label="Default select example">
                                     <option selected>Pilih Kode Ruang</option>
                                     <?php
@@ -203,7 +208,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Hari:</label>
-                                <select class="form-select text-modal-custom" name="hari"
+                                <select class="form-select modal-custom" name="hari"
                                     aria-label="Default select example">
                                     <option selected>Pilih Hari</option>
                                     <option value="Senin">Senin</option>
@@ -216,44 +221,44 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mb-4 pt-2">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Jam Mulai: </label>
-                                <input type="time" name="waktu_mulai" class="form-control text-modal-custom"
+                                <input type="time" name="waktu_mulai" class="form-control modal-custom"
                                     id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Jam Selesai:</label>
-                                <input type="time" name="waktu_selesai" class="form-control text-modal-custom"
+                                <input type="time" name="waktu_selesai" class="form-control modal-custom"
                                     id="recipient-name">
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mb-4 pt-2">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Matkul:</label>
-                                <input type="text" name="matkul" class="form-control text-modal-custom"
+                                <input type="text" name="matkul" class="form-control modal-custom"
                                     id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Dosen:</label>
-                                <input type="text" name="nama_dosen" class="form-control text-modal-custom"
+                                <input type="text" name="nama_dosen" class="form-control modal-custom"
                                     id="recipient-name">
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row pt-2">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                <input type="text" name="nama_kelas" class="form-control text-modal-custom"
+                                <input type="text" name="nama_kelas" class="form-control modal-custom"
                                     id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Program Studi:</label>
-                                <input type="text" name="prodi" class="form-control text-modal-custom"
+                                <input type="text" name="prodi" class="form-control modal-custom"
                                     id="recipient-name">
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="border: none;">
                         <button type="button" class="btn btn-batal" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" class="btn btn-simpan">Simpan</button>
                     </div>
@@ -263,175 +268,177 @@
     </div>
 
     <?php
-    foreach($data['jdwl'] as $row) {
-        ?>
-        <!-- Modal Read -->
-        <div class="modal fade" id="readModal<?= $row['id'] ?>" tabindex="-1"
-            aria-labelledby="readModalLabel<?= $row['id'] ?>" aria-hidden="true" style="font-size: 15px">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="readModalLabel<?= $row['kode'] ?>"><b>
-                                <?= $row['nama_ruangan'] ?>
-                            </b> </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="fungsi/edit.php?ruang=edit&kode=<?= $row['kode'] ?>" method="read"
-                        style="font-size: 15px">
-                        <div class="modal-body" style="font-size: 16px">
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">K. Ruang:</label>
-                                    <input type="text" name="kode_ruang" class="form-control text-modal-custom"
-                                        value="<?= $row['kode_ruang'] ?>" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Hari:</label>
-                                    <input type="text" name="hari" class="form-control text-modal-custom"
-                                        value="<?= $row['hari'] ?>" disabled>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Jam Mulai: </label>
-                                    <input type="text" name="waktu_mulai" class="form-control text-modal-custom"
-                                        value="<?= $row['waktu_mulai'] ?>" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Jam Selesai:</label>
-                                    <input type="text" name="waktu_selesai" class="form-control text-modal-custom"
-                                        value="<?= $row['waktu_selesai'] ?>" disabled>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Matkul:</label>
-                                    <input type="text" name="matkul" class="form-control text-modal-custom"
-                                        value="<?= $row['matkul'] ?>" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Dosen:</label>
-                                    <input type="text" name="nama_dosen" class="form-control text-modal-custom"
-                                        value="<?= $row['nama_dosen'] ?>" disabled>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                    <input type="text" name="nama_kelas" class="form-control text-modal-custom"
-                                        value="<?= $row['nama_kelas'] ?>" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Program Studi:</label>
-                                    <input type="text" name="prodi" class="form-control text-modal-custom"
-                                        value="<?= $row['prodi'] ?>" disabled>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-closee" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </form>
+        foreach($data['jdwl'] as $row) {
+    ?>
+
+    <!-- Modal Read -->
+    <div class="modal fade" id="readModal<?= $row['id'] ?>" tabindex="-1"
+        aria-labelledby="readModalLabel<?= $row['id'] ?>" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content content-custom">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="readModalLabel<?= $row['kode'] ?>"><b>
+                            <?= $row['nama_ruangan'] ?>
+                        </b> </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
+                <form action="fungsi/edit.php?ruang=edit&kode=<?= $row['kode'] ?>" method="read"
+                    style="font-size: 15px">
+                    <div class="modal-body" style="font-weight: 700;">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Kode Ruang:</label>
+                                <input type="text" name="kode_ruang" class="form-control modal-custom"
+                                    value="<?= $row['kode_ruang'] ?>" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Hari:</label>
+                                <input type="text" name="hari" class="form-control modal-custom"
+                                    value="<?= $row['hari'] ?>" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Jam Mulai: </label>
+                                <input type="text" name="waktu_mulai" class="form-control modal-custom"
+                                    value="<?= $row['waktu_mulai'] ?>" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Jam Selesai:</label>
+                                <input type="text" name="waktu_selesai" class="form-control modal-custom"
+                                    value="<?= $row['waktu_selesai'] ?>" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Matkul:</label>
+                                <input type="text" name="matkul" class="form-control modal-custom"
+                                    value="<?= $row['matkul'] ?>" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Dosen:</label>
+                                <input type="text" name="nama_dosen" class="form-control modal-custom"
+                                    value="<?= $row['nama_dosen'] ?>" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Kelas:</label>
+                                <input type="text" name="nama_kelas" class="form-control modal-custom"
+                                    value="<?= $row['nama_kelas'] ?>" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Program Studi:</label>
+                                <input type="text" name="prodi" class="form-control modal-custom"
+                                    value="<?= $row['prodi'] ?>" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="border: none;">
+                        <button type="button" class="btn btn-closee" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
     <?php }
-    foreach($data['jdwl'] as $row) {
-        ?>
-        <!-- Modal Edit -->
-        <div class="modal fade" id="editModal<?= $row['id'] ?>" tabindex="-1"
-            aria-labelledby="editModalLabel<?= $row['id'] ?>" aria-hidden="true" style="font-size: 15px">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="editModalLabel<?= $row['kode'] ?>"><b>
-                                <?= $row['nama_ruangan'] ?>
-                            </b> </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="<?= JADWALURL ?>/edit" method="post" style="font-size: 15px">
-                        <input type="text" name="id" value="<?= $row['id'] ?>" hidden>
-                        <div class="modal-body" style="font-size: 16px">
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">K. Ruang:</label>
-                                    <select class="form-select text-modal-custom" name="kode_ruang"
-                                        aria-label="Default select example">
-                                        <option selected>Pilih Kode Ruang</option>
-                                        <?php
-                                        foreach($data['rng'] as $row2) {
-                                            ?>
-                                            <option value="<?= $row2['kode'] ?>" <?= ($row2['kode'] == $row['kode_ruang']) ? 'selected' : '' ?>>
-                                                <?= $row2['kode'] ?>
-                                            </option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Hari:</label>
-                                    <select class="form-select text-modal-custom" name="hari"
-                                        aria-label="Default select example">
-                                        <option selected>Pilih Hari</option>
-                                        <?php
-                                        $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
-                                        foreach($days as $day) {
-                                            ?>
-                                            <option value="<?= $day ?>" <?= ($day == $row['hari']) ? 'selected' : '' ?>>
-                                                <?= $day ?>
-                                            </option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Jam Mulai: </label>
-                                    <input type="time" name="waktu_mulai" class="form-control text-modal-custom"
-                                        value="<?= $row['waktu_mulai'] ?>">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Jam Selesai:</label>
-                                    <input type="time" name="waktu_selesai" class="form-control text-modal-custom"
-                                        value="<?= $row['waktu_selesai'] ?>">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Matkul:</label>
-                                    <input type="text" name="matkul" class="form-control text-modal-custom"
-                                        value="<?= $row['matkul'] ?>">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Dosen:</label>
-                                    <input type="text" name="nama_dosen" class="form-control text-modal-custom"
-                                        value="<?= $row['nama_dosen'] ?>">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                    <input type="text" name="nama_kelas" class="form-control text-modal-custom"
-                                        value="<?= $row['nama_kelas'] ?>">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="recipient-name" class="col-form-label">Program Studi:</label>
-                                    <input type="text" name="prodi" class="form-control text-modal-custom"
-                                        value="<?= $row['prodi'] ?>">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-batal" data-bs-dismiss="modal">Batal</button>
-                            <button type="submit" class="btn btn-simpan">Simpan</button>
-                        </div>
-                    </form>
+        foreach($data['jdwl'] as $row) {
+    ?>
+    
+    <!-- Modal Edit -->
+    <div class="modal fade" id="editModal<?= $row['id'] ?>" tabindex="-1"
+        aria-labelledby="editModalLabel<?= $row['id'] ?>" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content content-custom">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editModalLabel<?= $row['kode'] ?>"><b>
+                            <?= $row['nama_ruangan'] ?>
+                        </b> </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
+                <form action="<?= JADWALURL ?>/edit" method="post">
+                    <input type="text" name="id" value="<?= $row['id'] ?>" hidden>
+                    <div class="modal-body" style="font-weight: 700;">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Kode Ruang:</label>
+                                <select class="form-select modal-custom" name="kode_ruang"
+                                    aria-label="Default select example">
+                                    <option selected>Pilih Kode Ruang</option>
+                                    <?php
+                                    foreach($data['rng'] as $row2) {
+                                        ?>
+                                        <option value="<?= $row2['kode'] ?>" <?= ($row2['kode'] == $row['kode_ruang']) ? 'selected' : '' ?>>
+                                            <?= $row2['kode'] ?>
+                                        </option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Hari:</label>
+                                <select class="form-select modal-custom" name="hari"
+                                    aria-label="Default select example">
+                                    <option selected>Pilih Hari</option>
+                                    <?php
+                                    $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+                                    foreach($days as $day) {
+                                        ?>
+                                        <option value="<?= $day ?>" <?= ($day == $row['hari']) ? 'selected' : '' ?>>
+                                            <?= $day ?>
+                                        </option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Jam Mulai: </label>
+                                <input type="time" name="waktu_mulai" class="form-control modal-custom"
+                                    value="<?= $row['waktu_mulai'] ?>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Jam Selesai:</label>
+                                <input type="time" name="waktu_selesai" class="form-control modal-custom"
+                                    value="<?= $row['waktu_selesai'] ?>">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Matkul:</label>
+                                <input type="text" name="matkul" class="form-control modal-custom"
+                                    value="<?= $row['matkul'] ?>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Dosen:</label>
+                                <input type="text" name="nama_dosen" class="form-control modal-custom"
+                                    value="<?= $row['nama_dosen'] ?>">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Kelas:</label>
+                                <input type="text" name="nama_kelas" class="form-control modal-custom"
+                                    value="<?= $row['nama_kelas'] ?>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recipient-name" class="col-form-label">Program Studi:</label>
+                                <input type="text" name="prodi" class="form-control modal-custom"
+                                    value="<?= $row['prodi'] ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="border: none;">
+                        <button type="button" class="btn btn-batal" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-simpan">Simpan</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
     <?php } ?>
 </main>

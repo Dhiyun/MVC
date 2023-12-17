@@ -99,6 +99,18 @@
             flex-shrink: 0;
             padding-left: 15px;
         }
+
+        .content-custom {
+            border-radius: 20px; 
+            background: #F8F8F8;
+        }
+
+        .modal-custom {
+            font-size: 16px;
+            border-radius: 64px;
+            background: #ECEBEB;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -106,7 +118,7 @@
     <div class="container mb-5">
         <div class="card mt-4" style="border: 0; border-radius: 20px;">
             <div class="card-body">
-                <nav class="navbar navbar-light" style="border-radius: 15px;">
+                <nav class="navbar navbar-light">
                     <div class="row">
                         <div class="col-md-9">
                             <form class="form-inline">
@@ -169,50 +181,46 @@
         <?php
             foreach ($data['rng'] as $row) {
         ?>
+
+        <!-- Modal Tambah-->
         <div class="modal fade" id="tambahRuangModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
             role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
             <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">Pinjam Ruang</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+                <div class="modal-content content-custom">
                     <form action="fungsi/tambah.php?ruang=tambah" method="post">
-                        <div class="modal-body" style="font-size: 16px">
-                            <div class="mb-3">
+                        <div class="modal-body" style="font-weight: 700;">
+                            <div class="mb-4 pt-4">
                                 <label for="recipient-name" class="col-form-label">Nama</label>
-                                <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
-                                <input type="text" name="kode" class="form-control text-modal-custom"
-                                    value="<?= $row['kode'] ?>">
+                                <input type="text" name="nama" class="form-control modal-custom" placeholder="Nama">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Nim</label>
-                                <input type="text" name="kode" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="text" name="nim" class="form-control modal-custom" placeholder="Nim" id="recipient-name">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Tanggal Pinjam</label>
-                                <input type="text" name="kode" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="date" name="tanggal_pinjam" class="form-control modal-custom" placeholder="Tanggal Pinjam" id="recipient-name">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Tanggal Selesai</label>
-                                <input type="text" name="kode" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="date" name="tanggal_kembali" class="form-control modal-custom" placeholder="Tanggal Selesai" id="recipient-name">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Kode Ruang</label>
                                 <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
-                                <input type="text" name="kode" class="form-control text-modal-custom"
+                                <input type="text" name="kode" class="form-control modal-custom" placeholder="Kode Ruang"
                                     value="<?= $row['kode'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Keterangan</label>
-                                <input type="text" name="nama_ruang" class="form-control text-modal-custom" id="recipient-name">
+                                <textarea type="text" name="keterangan" class="form-control modal-custom" placeholder="Keterangan" id="recipient-name"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Nomor HP</label>
-                                <input type="text" name="kode" class="form-control text-modal-custom" id="recipient-name">
+                                <input type="text" name="no_telp" class="form-control modal-custom" placeholder="No. Hp" id="recipient-name">
                             </div>            
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer" style="border: none;">
                             <button type="button" class="btn btn-batal" data-bs-dismiss="modal">
                                     Batal
                             </button>

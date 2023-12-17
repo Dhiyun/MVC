@@ -54,8 +54,16 @@
             color: #fff;
         }
 
-        .text-modal-custom {
-            font-size: 14px;
+        .modal-custom {
+            font-size: 16px;
+            border-radius: 64px;
+            background-color: #ECEBEB;
+            border: none;
+        }
+
+        .content-custom {
+            border-radius: 20px; 
+            background: #F8F8F8;
         }
 
         #tableruang {
@@ -64,6 +72,7 @@
     </style>
 </head>
 
+<div class="col-md-2"></div>
 <main class="col-md-10" style="background-color: #F5F5F5">
     <div class="row pt-3 pb-2 mb-3 px-1 border-bottom">
         <div class="d-flex p-1 justify-content-center align-items-center custom-title-box">
@@ -87,7 +96,7 @@
     </div>
 
     <div class="table-responsive small pt-3 px-3" >
-        <table id="tableruang" class="table rounded" style="border-radius: 15px; background-color: #000;">
+        <table id="tableruang" class="table rounded">
             <thead>
                 <tr>
                     <th scope="col" style="background-color: #363062; color:#fff;">No.</th>
@@ -101,9 +110,9 @@
             </thead>
             <tbody>
                 <?php
-                $no = 1;
-                foreach ($data['rng'] as $row) {
-                    ?>
+                    $no = 1;
+                    foreach ($data['rng'] as $row) {
+                ?>
                     <tr>
                         <td>
                             <?= $no++ ?>
@@ -140,28 +149,22 @@
         </table>
     </div>
 
+    <!-- Modal Tambah -->
     <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="true"
         role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Ruang</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+            <div class="modal-content content-custom">
                 <form action="<?= RUANGURL ?>/tambah" method="post">
-                    <div class="modal-body" style="font-size: 16px">
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Kode:</label>
-                            <input type="text" name="kode" class="form-control text-modal-custom" required>
+                    <div class="modal-body">
+                        <div class="mb-4 pt-4">
+                            <input type="text" name="kode" class="form-control modal-custom" placeholder="Kode Ruang" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Nama Ruang:</label>
-                            <input type="text" name="nama_ruangan" class="form-control text-modal-custom" required>
+                        <div class="mb-4 pt-2">
+                            <input type="text" name="nama_ruangan" class="form-control modal-custom" placeholder="Nama Ruang" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Lantai: </label>
-                            <select class="form-select text-modal-custom" name="lantai"
-                                aria-label="Default select example" required>
+                        <div class="mb-4 pt-2">
+                            <select class="form-select modal-custom" name="lantai"
+                                aria-label="Default select example" placeholder="Lantai" required>
                                 <option selected>Pilih Lantai</option>
                                 <?php
                                 foreach ($data['lnt'] as $row2) {
@@ -174,25 +177,26 @@
                                 ?>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Kapasitas:</label>
-                            <input type="text" name="kapasitas" class="form-control text-modal-cu stom"
-                                id="recipient-name" required>
+                        <div class="mb-4 pt-2">
+                            <input type="text" name="kapasitas" class="form-control modal-custom"
+                                id="recipient-name" placeholder="Kapasitas" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="pt-2">
                             <label for="recipient-name" class="col-form-label">Fasilitas:</label><br>
                             <?php
-                            foreach ($data['fsl'] as $row3) {
-                                ?>
+                                foreach ($data['fsl'] as $row3) {
+                            ?>
                                 <label>
-                                    <input type="checkbox" name="fasilitas_checked[]" value="<?= $row3['id']; ?>"><?= $row3['nama_barang']; ?>
+                                    <input type="checkbox" name="fasilitas_checked[]" 
+                                    style="margin-right: 5px;"
+                                    value="<?= $row3['id']; ?>"><?= $row3['nama_barang']; ?>
                                 </label><br>
-                                <?php
-                            }
+                            <?php
+                                }
                             ?>
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="border: none;">
                         <button type="button" class="btn btn-batal" data-bs-dismiss="modal">
                             Batal
                         </button>
@@ -206,74 +210,71 @@
     </div>
 
     <?php
-    foreach ($data['rng'] as $row) {
-        ?>
-        <!-- Modal Edit -->
-        <div class="modal fade" id="editModal<?= $row['kode'] ?>" tabindex="-1"
-            aria-labelledby="editModalLabel<?= $row['kode'] ?>" aria-hidden="true" style="font-size: 15px">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="editModalLabel<?= $row['kode'] ?>">Edit Jadwal</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="<?= RUANGURL ?>/edit" method="POST" style="font-size: 15px">
-                        <div class="modal-body" style="font-size: 16px">
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Kode:</label>
-                                <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
-                                <input type="text" name="kode" class="form-control text-modal-custom"
-                                    value="<?= $row['kode'] ?>">
-                            </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Nama Ruang:</label>
-                                <input type="text" name="nama_ruangan" class="form-control text-modal-custom"
-                                    value="<?= $row['nama_ruangan'] ?>">
-                            </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Lantai:</label>
-                                <select name="lantai" class="form-select text-modal-custom">
-                                    <option>Pilih Lantai</option>
-                                    <?php
-                                    foreach ($data['lnt'] as $row2) {
-                                        ?>
-                                        <option value="<?= $row2['lantai'] ?>" <?= ($row2['lantai'] == $row['lantai']) ? 'selected' : '' ?>>
-                                            <?= $row2['lantai'] ?>
-                                        </option>
-                                        <?php
-                                    }
-                                    ?>
-                                </select>
-                            </div>
+        foreach ($data['rng'] as $row) {
+    ?>
 
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Kapasitas:</label>
-                                <input type="text" name="kapasitas" class="form-control text-modal-custom"
-                                    value="<?= $row['kapasitas'] ?>">
-                            </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Fasilitas:</label><br>
+    <!-- Modal Edit -->
+    <div class="modal fade" id="editModal<?= $row['kode'] ?>" tabindex="-1"
+        aria-labelledby="editModalLabel<?= $row['kode'] ?>" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content content-custom">
+                <form action="<?= RUANGURL ?>/edit" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-4 pt-4">
+                            <!-- <label for="recipient-name" class="col-form-label">Kode:</label> -->
+                            <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
+                            <input type="text" name="kode" class="form-control modal-custom"
+                                value="<?= $row['kode'] ?>">
+                        </div>
+                        <div class="mb-4 pt-2">
+                            <!-- <label for="recipient-name" class="col-form-label">Nama Ruang:</label> -->
+                            <input type="text" name="nama_ruangan" class="form-control modal-custom"
+                                value="<?= $row['nama_ruangan'] ?>">
+                        </div>
+                        <div class="mb-4 pt-2">
+                            <!-- <label for="recipient-name" class="col-form-label">Lantai:</label> -->
+                            <select name="lantai" class="form-select modal-custom">
+                                <option>Pilih Lantai</option>
                                 <?php
-                                foreach ($data['fsl'] as $row3) {
-                                    $selectedFasilitas = explode(',', $row['nama_barang']);
+                                foreach ($data['lnt'] as $row2) {
                                     ?>
-                                    <label>
-                                    <input type="checkbox" name="fasilitas_checked[]" value="<?= $row3['id']; ?>" 
-                                    <?php echo (in_array($row3['nama_barang'], $selectedFasilitas)) ? 'checked' : ''; ?>>
-                                        <?= $row3['nama_barang']; ?>
-                                    </label><br>
+                                    <option value="<?= $row2['lantai'] ?>" <?= ($row2['lantai'] == $row['lantai']) ? 'selected' : '' ?>>
+                                        <?= $row2['lantai'] ?>
+                                    </option>
                                     <?php
                                 }
                                 ?>
-                            </div>
+                            </select>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-batal" data-bs-dismiss="modal">Batal</button>
-                            <button type="submit" class="btn btn-simpan">Simpan</button>
+
+                        <div class="mb-4 pt-2">
+                            <!-- <label for="recipient-name" class="col-form-label">Kapasitas:</label> -->
+                            <input type="text" name="kapasitas" class="form-control modal-custom"
+                                value="<?= $row['kapasitas'] ?>">
                         </div>
-                    </form>
-                </div>
+                        <div class="pt-2">
+                            <label for="recipient-name" class="col-form-label">Fasilitas:</label><br>
+                            <?php
+                            foreach ($data['fsl'] as $row3) {
+                                $selectedFasilitas = explode(',', $row['nama_barang']);
+                                ?>
+                                <label>
+                                    <input type="checkbox" name="fasilitas_checked[]" value="<?= $row3['id']; ?>" 
+                                        <?php echo (in_array($row3['nama_barang'], $selectedFasilitas)) ? 'checked' : ''; ?>>
+                                        <?= $row3['nama_barang']; ?>
+                                </label><br>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="border: none;">
+                        <button type="button" class="btn btn-batal" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-simpan">Simpan</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
     <?php } ?>
 </main>

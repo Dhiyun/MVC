@@ -21,7 +21,7 @@ class Reg extends Controller {
             header('Location: '.BASEURL.'reg');
             exit;
         } else {
-            Flasher::setFlash('Register Gagal!', '', 'success');
+            Flasher::setFlash('Register Gagal!', '', 'danger');
             header('Location: '.BASEURL.'reg');
             exit;
         }

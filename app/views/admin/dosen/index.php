@@ -54,8 +54,16 @@
             color: #fff;
         }
 
-        .text-modal-custom {
-            font-size: 14px;
+        .modal-custom {
+            font-size: 16px;
+            border-radius: 64px;
+            background: #ECEBEB;
+            border: none;
+        }
+
+        .content-custom {
+            border-radius: 20px; 
+            background: #F8F8F8;
         }
 
         #tableruang {
@@ -64,6 +72,7 @@
     </style>
 </head>
 
+<div class="col-md-2"></div>
 <main class="col-md-10" style="background-color: #F5F5F5">
     <div class="row pt-3 pb-2 mb-3 px-1 border-bottom">
         <div class="d-flex p-1 justify-content-center align-items-center custom-title-box">
@@ -92,7 +101,7 @@
     </div>
 
     <div class="table-responsive small pt-3 px-3">
-        <table id="tableruang" class="table rounded" style="border-radius: 15px; background-color: #000;">
+        <table id="tableruang" class="table rounded">
             <thead>
                 <tr>
                     <th scope="col" style="background-color: #363062; color:#fff;">No.</th>
@@ -103,9 +112,9 @@
             </thead>
             <tbody>
                 <?php
-                $no = 1;
-                foreach ($data['dsn'] as $row) {
-                    ?>
+                    $no = 1;
+                    foreach ($data['dsn'] as $row) {
+                ?>
                     <tr>
                         <td>
                             <?= $no++ ?>
@@ -123,7 +132,7 @@
                                 
                             </a>
                             <a href="<?= DOSENURL ?>/hapus/<?= $row['kode'] ?>"
-                                onclick="javascript:return confirm('Hapus Data Ruang ?');"
+                                onclick="javascript:return confirm('Hapus Data Dosen ?');"
                                 class="btn btn-delete btn-xs"><img src="../assets/icon/ic-delete.png" alt="" srcset=""
                                     style="width: 16px; margin-bottom: 2px;"> </a>
                         </td>
@@ -133,26 +142,23 @@
         </table>
     </div>
 
+    <!-- Modal Tambah -->
     <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="true"
         role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Dosen</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+            <div class="modal-content content-custom">
                 <form action="<?= DOSENURL ?>/tambah" method="post">
-                    <div class="modal-body" style="font-size: 16px">
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Kode:</label>
-                            <input type="text" name="kode" class="form-control text-modal-custom" required>
+                    <div class="modal-body">
+                        <div class="mb-4 pt-4">
+                            <!-- <label for="recipient-name" class="col-form-label">Kode:</label> -->
+                            <input type="text" name="kode" class="form-control modal-custom" placeholder="Kode Dosen" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Nama Dosen:</label>
-                            <input type="text" name="nama_dosen" class="form-control text-modal-custom" required>
+                        <div class="pt-2">
+                            <!-- <label for="recipient-name" class="col-form-label">Nama Dosen:</label> -->
+                            <input type="text" name="nama_dosen" class="form-control modal-custom" placeholder="Nama Dosen" required>
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="border: none;">
                         <button type="button" class="btn btn-batal" data-bs-dismiss="modal">
                             Batal
                         </button>
@@ -166,38 +172,35 @@
     </div>
 
     <?php
-    foreach ($data['dsn'] as $row) {
-        ?>
-        <!-- Modal Edit -->
-        <div class="modal fade" id="editModal<?= $row['kode'] ?>" tabindex="-1"
-            aria-labelledby="editModalLabel<?= $row['kode'] ?>" aria-hidden="true" style="font-size: 15px">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="editModalLabel<?= $row['kode'] ?>">Edit Jadwal</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        foreach ($data['dsn'] as $row) {
+    ?>
+
+    <!-- Modal Edit -->
+    <div class="modal fade" id="editModal<?= $row['kode'] ?>" tabindex="-1"
+        aria-labelledby="editModalLabel<?= $row['kode'] ?>" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content content-custom">
+                <form action="<?= DOSENURL ?>/edit" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-4 pt-4">
+                            <!-- <label for="recipient-name" class="col-form-label">Kode:</label> -->
+                            <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
+                            <input type="text" name="kode" class="form-control modal-custom"
+                                value="<?= $row['kode'] ?>">
+                        </div>
+                        <div class="pt-2">
+                            <!-- <label for="recipient-name" class="col-form-label">Nama Ruang:</label> -->
+                            <input type="text" name="nama_dosen" class="form-control modal-custom"
+                                value="<?= $row['nama_dosen'] ?>">
+                        </div>
                     </div>
-                    <form action="<?= DOSENURL ?>/edit" method="POST" style="font-size: 15px">
-                        <div class="modal-body" style="font-size: 16px">
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Kode:</label>
-                                <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
-                                <input type="text" name="kode" class="form-control text-modal-custom"
-                                    value="<?= $row['kode'] ?>">
-                            </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Nama Ruang:</label>
-                                <input type="text" name="nama_dosen" class="form-control text-modal-custom"
-                                    value="<?= $row['nama_dosen'] ?>">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-batal" data-bs-dismiss="modal">Batal</button>
-                            <button type="submit" class="btn btn-simpan">Simpan</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="modal-footer" style="border: none;">
+                        <button type="button" class="btn btn-batal" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-simpan">Simpan</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
     <?php } ?>
 </main>
