@@ -239,7 +239,7 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Jam Mulai: </label>
-                                <input type="date" name="waktu_mulai" class="form-control modal-custom" value="<?= $row['waktu_mulai'] ?>" id="recipient-name">
+                                <input type="time" name="waktu_mulai" class="form-control modal-custom" value="<?= $row['waktu_mulai'] ?>" id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Kapasitas:</label>
@@ -249,7 +249,7 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Jam Selesai:</label>
-                                <input type="date" name="waktu_selesai" class="form-control modal-custom" value="<?= $row['waktu_selesai'] ?>" id="recipient-name">
+                                <input type="time" name="waktu_selesai" class="form-control modal-custom" value="<?= $row['waktu_selesai'] ?>" id="recipient-name">
                             </div>
                             <div class="col-md-6">
                                 <label for="recipient-name" class="col-form-label">Fasilitas:</label>

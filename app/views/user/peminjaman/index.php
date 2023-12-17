@@ -189,7 +189,7 @@
                 <div class="modal-content content-custom">
                     <form action="fungsi/tambah.php?ruang=tambah" method="post">
                         <div class="modal-body" style="font-weight: 700;">
-                            <div class="mb-4 pt-4">
+                            <div class="mb-3 pt-4">
                                 <label for="recipient-name" class="col-form-label">Nama</label>
                                 <input type="text" name="nama" class="form-control modal-custom" placeholder="Nama">
                             </div>
