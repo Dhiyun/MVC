@@ -1,76 +1,5 @@
 <head>
     <style>
-        body {
-            background-color: #2A1A5E;
-        }
-
-        .btn-detail {
-            background-color: #FB9224;
-            border-radius: 10px;
-            color: #fff;
-        }
-
-        .btn-detail:hover {
-            background-color: #FB9224;
-            border-radius: 10px;
-            color: #fff;
-        }
-
-        .btn-closee {
-            background-color: #FB9224;
-            color: #fff;
-            border-radius: 20px;
-            width: 90px;
-            height: 35px;
-            font-size: 14px;
-        }
-
-        .btn-closee:hover {
-            background-color: #FB9224;
-            color: #fff;
-        }
-
-        .search {
-            border-radius: 10px;
-            background: #D9D9D9;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-            width: 497px;
-            height: 35px;
-            flex-shrink: 0;
-        }
-
-        .icon {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            left: 462px;
-            top: 31%;
-        }
-
-        .form-inline input {
-            padding-right: 50px;
-        }
-
-        .search::-webkit-search-cancel-button,
-        .search::-webkit-search-clear-button {
-            appearance: none;
-            display: none;
-        }
-
-        .box-carousel {
-            border-radius: 10px;
-            background: #D9D9D9;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-            width: 175px;
-            height: 35px;
-            flex-shrink: 0;
-        }
-
-        .carousel-item p {
-            margin-top: -2.5px;
-            color: #000;
-        }
-
         <?php foreach ($data['lnt'] as $row) : ?>
             <?php if ($row['lantai'] >= 6 && $row['lantai'] <= 8) : ?>
                 #carouselLantai-<?php echo $row['lantai']; ?> {
@@ -86,32 +15,6 @@
                 <?php endif; ?>
             }
         <?php endforeach; ?>
-
-        .carousel-item.active,
-        .carousel-item-next,
-        .carousel-item-prev {
-            display: block;
-        }
-
-        .col-md-4 .container {
-            width: 199px;
-        }
-
-        .custom-select {
-            background-image: url("../assets/icon/arrow-down.svg");
-        }
-
-        .modal-custom {
-            font-size: 16px;
-            border-radius: 10px;
-            border: none;
-            background: #DDD;
-        }
-
-        .content-custom {
-            border-radius: 20px; 
-            background: #F8F8F8;
-        }
     </style>
 </head>
 <body>

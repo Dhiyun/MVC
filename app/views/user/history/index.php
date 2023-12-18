@@ -1,15 +1,3 @@
-<head>
-    <style>
-        .icon {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            left: 462px;
-            top: 31%;
-        }
-
-    </style>
-</head>
 <div class="container mb-5">
     <div class="card mt-4" style="border: 0; border-radius: 20px;">
         <div class="card-body">
