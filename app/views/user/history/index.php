@@ -10,7 +10,7 @@
 
     </style>
 </head>
-<div class="container">
+<div class="container mb-5">
     <div class="card mt-4" style="border: 0; border-radius: 20px;">
         <div class="card-body">
             <nav class="navbar navbar-light">
