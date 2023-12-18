@@ -51,12 +51,12 @@ class Ruang extends Controller
                 header('Location: ' . ADMINURL . '/ruang');
                 exit;
             } else {
-                Flasher::setFlash('Tidak Ada Perubahan atau Tidak Sesuai', '', 'warning');
+                Flasher::setFlash('Ruang Gagal', 'Diubah', 'danger');
                 header('Location: ' . ADMINURL . '/ruang');
                 exit;
             }
         } catch (PDOException $e) {
-            Flasher::setFlash('Terjadi kesalahan', '', 'danger');
+            Flasher::setFlash('Ruang Tidak Sesuai', '', 'warning');
             header('Location: ' . ADMINURL . '/ruang');
             exit;
         }
