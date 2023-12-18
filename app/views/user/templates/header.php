@@ -259,6 +259,7 @@
 
         .btn-print {
             background-color: #FB9224;
+            border-radius: 10px;
             color: #fff;
         }
 
