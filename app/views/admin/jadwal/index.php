@@ -85,7 +85,7 @@
             font-size: 16px;
             border-radius: 10px;
             border: none;
-            background-color: #ECEBEB;
+            background-color: #DDD;
         }
 
         .content-custom {

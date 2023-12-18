@@ -56,8 +56,8 @@
 
         .modal-custom {
             font-size: 16px;
-            border-radius: 64px;
-            background-color: #ECEBEB;
+            border-radius: 10px;
+            background-color: #DDD;
             border: none;
         }
 
@@ -154,17 +154,24 @@
         role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
             <div class="modal-content content-custom">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalTitleId"><b>TAMBAH RUANG</b></h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
                 <form action="<?= RUANGURL ?>/tambah" method="post">
-                    <div class="modal-body">
-                        <div class="mb-4 pt-4">
-                            <input type="text" name="kode" class="form-control modal-custom" placeholder="Kode Ruang" required>
+                    <div class="modal-body"  style="font-weight: 700;">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Kode:</label>
+                            <input type="text" name="kode" class="form-control modal-custom" required>
                         </div>
-                        <div class="mb-4 pt-2">
-                            <input type="text" name="nama_ruangan" class="form-control modal-custom" placeholder="Nama Ruang" required>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nama Ruang:</label>
+                            <input type="text" name="nama_ruangan" class="form-control modal-custom" required>
                         </div>
-                        <div class="mb-4 pt-2">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Lantai: </label>
                             <select class="form-select modal-custom" name="lantai"
-                                aria-label="Default select example" placeholder="Lantai" required>
+                                aria-label="Default select example" required>
                                 <option selected>Pilih Lantai</option>
                                 <?php
                                 foreach ($data['lnt'] as $row2) {
@@ -177,16 +184,17 @@
                                 ?>
                             </select>
                         </div>
-                        <div class="mb-4 pt-2">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Kapasitas: </label>
                             <input type="text" name="kapasitas" class="form-control modal-custom"
-                                id="recipient-name" placeholder="Kapasitas" required>
+                                id="recipient-name" required>
                         </div>
-                        <div class="pt-2">
+                        <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Fasilitas:</label><br>
                             <?php
                                 foreach ($data['fsl'] as $row3) {
                             ?>
-                                <label>
+                                <label style="font-weight: normal;">
                                     <input type="checkbox" name="fasilitas_checked[]" 
                                     style="margin-right: 5px;"
                                     value="<?= $row3['id']; ?>"><?= $row3['nama_barang']; ?>
@@ -218,21 +226,25 @@
         aria-labelledby="editModalLabel<?= $row['kode'] ?>" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content content-custom">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editModalLabel"><b>EDIT RUANG</b></h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
                 <form action="<?= RUANGURL ?>/edit" method="POST">
-                    <div class="modal-body">
-                        <div class="mb-4 pt-4">
-                            <!-- <label for="recipient-name" class="col-form-label">Kode:</label> -->
+                    <div class="modal-body" style="font-weight: 700;;">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Kode:</label>
                             <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
                             <input type="text" name="kode" class="form-control modal-custom"
                                 value="<?= $row['kode'] ?>">
                         </div>
-                        <div class="mb-4 pt-2">
-                            <!-- <label for="recipient-name" class="col-form-label">Nama Ruang:</label> -->
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nama Ruang:</label>
                             <input type="text" name="nama_ruangan" class="form-control modal-custom"
                                 value="<?= $row['nama_ruangan'] ?>">
                         </div>
-                        <div class="mb-4 pt-2">
-                            <!-- <label for="recipient-name" class="col-form-label">Lantai:</label> -->
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Lantai:</label>
                             <select name="lantai" class="form-select modal-custom">
                                 <option>Pilih Lantai</option>
                                 <?php
@@ -247,18 +259,18 @@
                             </select>
                         </div>
 
-                        <div class="mb-4 pt-2">
-                            <!-- <label for="recipient-name" class="col-form-label">Kapasitas:</label> -->
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Kapasitas:</label>
                             <input type="text" name="kapasitas" class="form-control modal-custom"
                                 value="<?= $row['kapasitas'] ?>">
                         </div>
-                        <div class="pt-2">
+                        <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Fasilitas:</label><br>
                             <?php
                             foreach ($data['fsl'] as $row3) {
                                 $selectedFasilitas = explode(',', $row['nama_barang']);
                                 ?>
-                                <label>
+                                <label style="font-weight: normal;">
                                     <input type="checkbox" name="fasilitas_checked[]" value="<?= $row3['id']; ?>" 
                                         <?php echo (in_array($row3['nama_barang'], $selectedFasilitas)) ? 'checked' : ''; ?>>
                                         <?= $row3['nama_barang']; ?>

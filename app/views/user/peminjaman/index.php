@@ -107,8 +107,8 @@
 
         .modal-custom {
             font-size: 16px;
-            border-radius: 64px;
-            background: #ECEBEB;
+            border-radius: 10px;
+            background: #DDD;
             border: none;
         }
     </style>
@@ -191,33 +191,33 @@
                         <div class="modal-body" style="font-weight: 700;">
                             <div class="mb-3 pt-4">
                                 <label for="recipient-name" class="col-form-label">Nama</label>
-                                <input type="text" name="nama" class="form-control modal-custom" placeholder="Nama">
+                                <input type="text" name="nama" class="form-control modal-custom">
                             </div>
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Nim</label>
-                                <input type="text" name="nim" class="form-control modal-custom" placeholder="Nim" id="recipient-name">
+                                <label for="recipient-name" class="col-form-label">NIM</label>
+                                <input type="text" name="nim" class="form-control modal-custom" id="recipient-name">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Tanggal Pinjam</label>
-                                <input type="date" name="tanggal_pinjam" class="form-control modal-custom" placeholder="Tanggal Pinjam" id="recipient-name">
+                                <input type="date" name="tanggal_pinjam" class="form-control modal-custom" id="recipient-name">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Tanggal Selesai</label>
-                                <input type="date" name="tanggal_kembali" class="form-control modal-custom" placeholder="Tanggal Selesai" id="recipient-name">
+                                <input type="date" name="tanggal_kembali" class="form-control modal-custom" id="recipient-name">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Kode Ruang</label>
                                 <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
-                                <input type="text" name="kode" class="form-control modal-custom" placeholder="Kode Ruang"
+                                <input type="text" name="kode" class="form-control modal-custom"
                                     value="<?= $row['kode'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Keterangan</label>
-                                <textarea type="text" name="keterangan" class="form-control modal-custom" placeholder="Keterangan" id="recipient-name"></textarea>
+                                <textarea type="text" name="keterangan" class="form-control modal-custom" id="recipient-name"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Nomor HP</label>
-                                <input type="text" name="no_telp" class="form-control modal-custom" placeholder="No. Hp" id="recipient-name">
+                                <input type="text" name="no_telp" class="form-control modal-custom" id="recipient-name">
                             </div>            
                         </div>
                         <div class="modal-footer" style="border: none;">

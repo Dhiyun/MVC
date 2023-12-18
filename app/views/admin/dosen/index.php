@@ -56,8 +56,8 @@
 
         .modal-custom {
             font-size: 16px;
-            border-radius: 64px;
-            background: #ECEBEB;
+            border-radius: 10px;
+            background: #DDD;
             border: none;
         }
 
@@ -147,15 +147,19 @@
         role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
             <div class="modal-content content-custom">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalTitleId"><b>TAMBAH DOSEN</b></h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
                 <form action="<?= DOSENURL ?>/tambah" method="post">
-                    <div class="modal-body">
-                        <div class="mb-4 pt-4">
-                            <!-- <label for="recipient-name" class="col-form-label">Kode:</label> -->
-                            <input type="text" name="kode" class="form-control modal-custom" placeholder="Kode Dosen" required>
+                    <div class="modal-body" style="font-weight: 700;">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Kode:</label>
+                            <input type="text" name="kode" class="form-control modal-custom" required>
                         </div>
-                        <div class="pt-2">
-                            <!-- <label for="recipient-name" class="col-form-label">Nama Dosen:</label> -->
-                            <input type="text" name="nama_dosen" class="form-control modal-custom" placeholder="Nama Dosen" required>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nama Dosen:</label>
+                            <input type="text" name="nama_dosen" class="form-control modal-custom" required>
                         </div>
                     </div>
                     <div class="modal-footer" style="border: none;">
@@ -180,16 +184,20 @@
         aria-labelledby="editModalLabel<?= $row['kode'] ?>" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content content-custom">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editModalLabel"><b>EDIT DOSEN</b></h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
                 <form action="<?= DOSENURL ?>/edit" method="POST">
-                    <div class="modal-body">
-                        <div class="mb-4 pt-4">
-                            <!-- <label for="recipient-name" class="col-form-label">Kode:</label> -->
+                    <div class="modal-body" style="font-weight: 700;">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Kode:</label>
                             <input type="hidden" name="old_kode" value="<?= $row['kode'] ?>">
                             <input type="text" name="kode" class="form-control modal-custom"
                                 value="<?= $row['kode'] ?>">
                         </div>
-                        <div class="pt-2">
-                            <!-- <label for="recipient-name" class="col-form-label">Nama Ruang:</label> -->
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nama Dosen:</label>
                             <input type="text" name="nama_dosen" class="form-control modal-custom"
                                 value="<?= $row['nama_dosen'] ?>">
                         </div>

@@ -105,7 +105,7 @@
             font-size: 16px;
             border-radius: 10px;
             border: none;
-            background: #ECEBEB;
+            background: #DDD;
         }
 
         .content-custom {
@@ -215,7 +215,7 @@
                     <div class="row mb-2">
                         <div class="col-md-2">
                             <!-- <label for="recipient-name" class="col-form-label">Hari:</label> -->
-                            <select class="form-select" style="border: none;" name="hari" value="<?= $row['hari'] ?>" aria-label="Default select example">
+                            <select class="form-select" style="border: none; background-color: #f8f8f8; font-weight: 700;" name="hari" value="<?= $row['hari'] ?>" aria-label="Default select example">
                                 <b><option selected>Hari</option></b>
                             </select>
                         </div>
