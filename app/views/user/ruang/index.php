@@ -15,35 +15,6 @@
                 <?php endif; ?>
             }
         <?php endforeach; ?>
-<<<<<<< HEAD
-
-        .carousel-item.active,
-        .carousel-item-next,
-        .carousel-item-prev {
-            display: block;
-        }
-
-        .col-md-4 .container {
-            width: 199px;
-        }
-
-        .custom-select {
-            background-image: url("../assets/icon/arrow-down.svg");
-        }
-
-        .modal-custom {
-            font-size: 16px;
-            border-radius: 10px;
-            border: none;
-            background: #ECEBEB;
-        }
-
-        .content-custom {
-            border-radius: 20px; 
-            background: #F8F8F8;
-        }
-=======
->>>>>>> 4d14c5c3d5ee77c49fa96f8339875c33b29248c9
     </style>
 </head>
 <body>
