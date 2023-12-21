@@ -27,7 +27,7 @@
                             <th scope="col">NAMA</th>
                             <th scope="col">TANGGAL</th>
                             <th scope="col">K. RUANG</th>
-                            <th scope="col">KEPERLUAN</th>
+                            <th scope="col">STATUS</th>
                             <th scope="col">AKSI</th>
                         </tr>
                     </thead>
