@@ -148,7 +148,3 @@ body {
 .col-md-4 .container {
     width: 199px;
 }
-
-.custom-select {
-    background-image: url("../assets/icon/arrow-down.svg");
-}
