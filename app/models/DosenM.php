@@ -22,13 +22,22 @@ class DosenM
         return $this->db->resultSet();
     }
 
+    public function getCountDosen()
+    {
+        $this->db->query("SELECT getJumlahDosen() as hitung");
+        $this->db->execute();
+        $result = $this->db->single(); 
+        return $result['hitung'];
+    }
+
     public function tambahDosen($data)
     {
         $this->db->query("INSERT INTO dosen VALUES (:kode, :nama_dosen)");
         $this->db->bind('kode', $data['kode']);
         $this->db->bind('nama_dosen', $data['nama_dosen']);
         $this->db->execute();
-        return $this->db->resultSet();
+        
+        return $this->db->rowCount();
     }
 
     public function hapusDosen($kode)

@@ -23,6 +23,14 @@ class Admin extends Controller
         // $data['lnt'] = $model->getAllLantai();
         // $data['fsl'] = $model->getAllFasilitas();
 
+        $modelP = $this->model('PeminjamanM');
+        $data['tPeminjaman'] = $modelP->getCountPeminjaman();
+        $data['proses'] = $modelP->getCountPeminjamanProses();
+        $data['selesai'] = $modelP->getCountPeminjamanSelesai();
+
+        $modelD = $this->model('DosenM');
+        $data['tDosen'] = $modelD->getCountDosen();
+
         $this->view('admin/templates/header', $data);
         $this->view('admin/templates/sidebar');
         $this->view('admin/dashboard/index', $data);
@@ -69,11 +77,13 @@ class Admin extends Controller
 
         $data['judul'] = 'Admin | Jadwal';
 
-        $model = $this->model('JadwalM');
+        $modelJ = $this->model('JadwalM');
+        $modelR = $this->model('RuangM');
+        $modelD = $this->model('DosenM');
 
-        $data['jdwl'] = $model->getAllJadwal();
-        $data['jdwlp'] = $model->getAllJadwalPivot();
-        $data['rng'] = $model->getAllRuangan();
+        $data['jdwl'] = $modelJ->getAllJadwal();
+        $data['rng'] = $modelR->getAllRuangFasilitas();
+        $data['dsn'] = $modelD->getAllDosen();
 
         $this->view('admin/templates/header', $data);
         $this->view('admin/templates/sidebar');
@@ -87,11 +97,9 @@ class Admin extends Controller
 
         $data['judul'] = 'Admin | Peminjaman';
 
-        // $model = $this->model('PeminjamanM');
+        $model = $this->model('PeminjamanM');
 
-        // $data['jdwl'] = $model->getAllJadwal();
-        // $data['jdwlp'] = $model->getAllJadwalPivot();
-        // $data['rng'] = $model->getAllRuangan();
+        $data['pmnjm'] = $model->getAllPeminjaman();
 
         $this->view('admin/templates/header', $data);
         $this->view('admin/templates/sidebar');
@@ -105,11 +113,9 @@ class Admin extends Controller
 
         $data['judul'] = 'Admin | History';
 
-        // $model = $this->model('PeminjamanM');
+        $model = $this->model('PeminjamanM');
 
-        // $data['jdwl'] = $model->getAllJadwal();
-        // $data['jdwlp'] = $model->getAllJadwalPivot();
-        // $data['rng'] = $model->getAllRuangan();
+        $data['pmnjm'] = $model->getAllPeminjaman();
 
         $this->view('admin/templates/header', $data);
         $this->view('admin/templates/sidebar');

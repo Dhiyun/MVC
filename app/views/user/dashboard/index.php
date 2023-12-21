@@ -6,7 +6,7 @@
                 <div class="hero-text">
                     <h2 class="text-header"><b>Selamat Datang di Jurusan Teknologi Informasi</b></h2>
                     <p class="text-paragraf">Manfaatkan fasilitas kampus dengan sebaik mungkin!</p>
-                    <button class="btn submit" onclick="window.location.href='<?= USERURL ?>/peminjaman'}, 2000)">Let's Start</button>
+                    <button class="btn submit" onclick="window.location.href='<?= USERURL ?>/peminjaman'; setTimeout(function(){ location.reload(); }, 5000)">Let's Start</button>
                 </div>
             </div>
         </div>

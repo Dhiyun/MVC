@@ -20,22 +20,19 @@ class User extends Controller {
         $this->view('user/templates/footer');
     }
 
-    public function getByLantai($lantai) {
-        echo $lantai;
-    }
-
     public function ruang()
     {
         $this->checkRole();
-
         $data['judul'] = 'Ruang';
 
-        $model = $this->model('RuangM');
+        $modelR = $this->model('RuangM');
+        $modelJ = $this->model('JadwalM');
+        $modelD = $this->model('DosenM');
 
-        $data['rng'] = $model->getAllRuangFasilitas();
-        // $data['rbl'] = $model->getByLantai();
-        $data['lnt'] = $model->getAllLantai();
-        $data['fsl'] = $model->getAllFasilitas();
+        $data['rng'] = $modelR->getAllRuangFasilitas();
+        $data['dsn'] = $modelD->getAllDosen();
+        $data['jdwl'] = $modelJ->getAllJadwal();
+        $data['lnt'] = $modelR->getAllLantai();
 
         $this->view('user/templates/header', $data);
         $this->view('user/templates/navbar');
@@ -49,11 +46,13 @@ class User extends Controller {
 
         $data['judul'] = 'Peminjaman';
 
-        $model = $this->model('JadwalM');
+        $modelJ = $this->model('JadwalM');
+        $modelU = $this->model('PeminjamanM');
+        $modelR = $this->model('RuangM');
 
-        $data['jdwl'] = $model->getAllJadwal();
-        $data['jdwlp'] = $model->getAllJadwalPivot();
-        $data['rng'] = $model->getAllRuangan();
+        $data['jdwl'] = $modelJ->getAllJadwal();
+        $data['rng'] = $modelR->getAllRuangFasilitas();
+        $data['usr'] = $modelU->getAllUser();
 
         $this->view('user/templates/header', $data);
         $this->view('user/templates/navbar');
@@ -67,15 +66,27 @@ class User extends Controller {
 
         $data['judul'] = 'History';
 
-        // $model = $this->model('JadwalM');
+        $model = $this->model('PeminjamanM');
 
-        // $data['jdwl'] = $model->getAllJadwal();
-        // $data['jdwlp'] = $model->getAllJadwalPivot();
-        // $data['rng'] = $model->getAllRuangan();
+        $data['usr'] = $model->getAllUser();
+        $data['pmnjm'] = $model->getAllPeminjaman();
 
         $this->view('user/templates/header', $data);
         $this->view('user/templates/navbar');
         $this->view('user/history/index', $data);
         $this->view('user/templates/footer');
+    }
+
+    public function laporan($id)
+    {
+        $this->checkRole();
+
+        $data['judul'] = 'Laporan';
+
+        $model = $this->model('PeminjamanM');
+
+        $data['pmnjm'] = $model->getIdPeminjaman($id);
+
+        $this->view('user/laporan/index', $data);
     }
 }

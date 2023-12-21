@@ -73,7 +73,8 @@
         <table class="table rounded" style="border-radius: 15px;">
             <thead>
                 <tr>
-                    <th scope="col" style="background-color: #363062; color:#fff; border-radius">Nama</th>
+                    <th scope="col" style="background-color: #363062; color:#fff;">No</th>
+                    <th scope="col" style="background-color: #363062; color:#fff;">Nama</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">Tanggal</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">Telepon</th>
                     <th scope="col" style="background-color: #363062; color:#fff;">K. Ruangan</th>
@@ -82,48 +83,56 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <p>tes</p>
-                    </td>
-                    <td>
-                        <p>tes</p>
-                    </td>
-                    <td>
-                        <p>tes</p>
-                    </td>
-                    <td>
-                        <p>tes</p>
-                    </td>
-                    <td>
-                        <p>tes</p>
-                    </td>
-                    <td>
-                        <a href="index.php?page=peminjaman/edit&id=<?= $row['id'] ?>" class="btn btn-approve btn-xs">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-                                fill="none">
-                                <path d="M7 9L10 12L20 2" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path
-                                    d="M19 10V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H14"
-                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                        <a href="fungsi/hapus.php?ruang=hapus&id=<?= $row['id'] ?>"
-                            onclick="javascript:return confirm('Hapus Data Jabatan ?');" class="btn btn-decline btn-xs">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
-                                fill="none">
-                                <path
-                                    d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
-                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M9 9L15 15" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </td>
-                </tr>
+                <?php
+                $no = 1;
+                foreach ($data['pmnjm'] as $row) {
+                    if($row['confirm'] == NULL) {
+                    ?>
+                    <tr>
+                        <td>
+                            <?= $no++ ?>
+                        </td>
+                        <td>
+                            <?= $row['nama_user'] ?>
+                        </td>
+                        <td>
+                            <?= $row['tanggal'] ?>
+                        </td>
+                        <td>
+                            <?= $row['no_telp'] ?>
+                        </td>
+                        <td>
+                            <?= $row['kode_ruangan'] ?>
+                        </td>
+                        <td>
+                            <?= $row['keterangan'] ?>
+                        </td>
+                        <td>
+                            <a href="<?= PEMINJAMANURL ?>/approve/<?= $row['id_pinjam'] ?>" class="btn btn-approve btn-xs" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
+                                    fill="none">
+                                    <path d="M7 9L10 12L20 2" stroke="black" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M19 10V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H14"
+                                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            <a href="<?= PEMINJAMANURL ?>/decline/<?= $row['id_pinjam'] ?>" class="btn btn-decline btn-xs">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
+                                    fill="none">
+                                    <path
+                                        d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M9 9L15 15" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                <?php }} ?>
             </tbody>
         </table>
     </div>

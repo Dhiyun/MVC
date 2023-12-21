@@ -8,7 +8,7 @@ class JadwalM {
     }
 
     public function getAllJadwal() {
-        $this->db->query("SELECT j.*, r.kode, r.nama_ruangan, k.nama_kelas, k.prodi, d.nama_dosen
+        $this->db->query("SELECT j.*, r.kode, r.lantai, r.nama_ruangan, k.nama_kelas, k.prodi, d.nama_dosen
         FROM jadwal j 
         JOIN ruangan r ON j.kode_ruang = r.kode 
         JOIN kelas k ON j.id_kelas = k.id
@@ -17,33 +17,7 @@ class JadwalM {
 
         return $this->db->resultSet();
     }
-
-    public function getAllJadwalPivot() {
-        $this->db->query("SELECT
-        kode_ruang, r.nama_ruangan,
-        GROUP_CONCAT(CASE WHEN hari = 'Senin' THEN CONCAT(matkul, ' (', waktu_mulai, ' - ', waktu_selesai, ')') END) AS Senin,
-        GROUP_CONCAT(CASE WHEN hari = 'Selasa' THEN CONCAT(matkul, ' (', waktu_mulai, ' - ', waktu_selesai, ')') END) AS Selasa,
-        GROUP_CONCAT(CASE WHEN hari = 'Rabu' THEN CONCAT(matkul, ' (', waktu_mulai, ' - ', waktu_selesai, ')') END) AS Rabu,
-        GROUP_CONCAT(CASE WHEN hari = 'Kamis' THEN CONCAT(matkul, ' (', waktu_mulai, ' - ', waktu_selesai, ')') END) AS Kamis,
-        GROUP_CONCAT(CASE WHEN hari = 'Jumat' THEN CONCAT(matkul, ' (', waktu_mulai, ' - ', waktu_selesai, ')') END) AS Jumat
-      FROM jadwal j
-      JOIN ruangan r ON j.kode_ruang = r.kode
-      GROUP BY kode_ruang
-      ORDER BY kode_ruang;
-      ");
-        return $this->db->resultSet();
-    }
-
-    public function getAllKelas() {
-        $this->db->query("SELECT * FROM kelas ORDER BY nama_kelas, prodi ASC");
-        return $this->db->resultSet();
-    }
-
-    public function getAllRuangan() {
-        $this->db->query("SELECT * FROM ruangan ORDER BY lantai, kode ASC");
-        return $this->db->resultSet();
-    }
-
+    
     public function tambahJadwal($data)
     {
         $this->db->query("CALL tambahJadwal(:kode_ruang, :nama_kelas, :prodi, :nama_dosen, :hari, :waktu_mulai, :waktu_selesai, :matkul)");

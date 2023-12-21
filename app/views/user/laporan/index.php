@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SPACEGO | CETAK SURAT PEMINJAMAN</title>
-  <link rel="icon" type="image/png" href="../assets/icon/logo.png">
+  <link rel="icon" type="image/png" href="../../assets/img/logo.png">
 
-  <link rel="stylesheet" href="../assets/dist/css/cetak.min.css">
+  <link rel="stylesheet" href="../../assets/dist/css/cetak.min.css">
   <style>
     * { 
       font-family: 'Times New Roman', serif; 
@@ -19,7 +19,7 @@
 <div class="page-content container">
     <div class="d-flex flex-rows py-1" style="border-bottom: 1px solid black;">
       <div class="w-20 py-2 px-3">
-        <img src="assets/gambar/logo-polinema.png" height="150px" class="">
+        <img src="../../assets/img/logo-polinema.png" height="150px" class="">
       </div>
       <div class="text-center w-55" style="font-size: 14pt; margin-left: 35px;">
         <p class="text-default-d3 mb-1"><b>KEMENTRIAN PENDIDIKAN, KEBUDAYAAN, RISET, DAN TEKNOLOGI</b></p>
@@ -40,14 +40,16 @@
         <p>Dengan Hormat,</p>
         <p>Sehubungan dengan adanya kegiatan: </p>
 
+        <?php foreach($data['pmnjm'] as $row) : ?>
         <div class="ml-5">
-            <p class="mb-1">Nama Peminjam: </p>
-            <p class="mb-1">Tanggal Pinjam: </p>
-            <p class="mb-1">Tanggal Kembali: </p>
-            <p class="mb-1">Ruang: </p>
-            <p class="mb-1">Keperluan: </p>
-            <p class="mb-1">No. HP: </p>
+            <p class="mb-1">Nama Peminjam: <?= $row['nama_user'] ?></p>
+            <p class="mb-1">Tanggal Pinjam: <?= $row['tanggal_pinjam'] ?></p>
+            <p class="mb-1">Tanggal Kembali: <?= $row['tanggal_kembali'] ?></p>
+            <p class="mb-1">Ruang: <?= $row['nama_ruangan'] ?></p>
+            <p class="mb-1">Keperluan: <?= $row['keterangan'] ?></p>
+            <p class="mb-1">No. HP: <?= $row['no_telp'] ?></p>
         </div>
+        <?php endforeach; ?>
 
         <p class="mt-3">Kami mohon bantuan peminjaman ruangan. Demikian surat peminjaman ini kami buat, atas izin dan bantuan yang diberikan kami sampaikan terima kasih.</p>
     </div>

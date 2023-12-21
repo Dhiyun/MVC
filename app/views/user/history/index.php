@@ -44,21 +44,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach($data['pmnjm'] as $row) : 
+                         if ($_SESSION['username'] == $row['username'] ) :
+                            if ($row['confirm'] == 'Approve' || $row['confirm'] == 'Decline') : ?>
                         <tr>
                             <td>
-                                test
+                                <?= $row['nama_user']; ?>
                             </td>
                             <td>
-                                test
+                            <?= $row['tanggal']; ?>
                             </td>
                             <td>
-                                test
+                            <?= $row['kode_ruangan']; ?>
                             </td>
                             <td>
-                                test
+                                <?= $row['confirm']; ?>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-print">
+                                <?php if($row['confirm'] == 'Approve') : ?>
+                                <a type="button" class="btn btn-print" href="<?= USERURL ?>/laporan/<?= $row['id_pinjam'] ?>">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"
                                         fill="none">
                                         <path
@@ -79,9 +83,13 @@
                                             stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                     Print
-                                </button>
+                                </a>
+                                <?php endif; ?>
                             </td>
                         </tr>
+                        <?php endif;
+                        endif;
+                    endforeach; ?>
                     </tbody>
                 </table>
             </div>
