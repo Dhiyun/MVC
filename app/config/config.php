@@ -9,7 +9,7 @@ define('JADWALURL', 'http://localhost/project/MVC/public/jadwal');
 
 //User
 define('USERURL', 'http://localhost/project/MVC/public/user');
-define('PEMINJAMANURL', 'http://localhost/project/MVC3/public/peminjaman');
+define('PEMINJAMANURL', 'http://localhost/project/MVC/public/peminjaman');
 
 date_default_timezone_set("Asia/Jakarta");
 define('DB_HOST', 'localhost');
