@@ -1,4 +1,5 @@
 <head>
+<<<<<<< HEAD
     <style>
         body {
             background-color: #2A1A5E;
@@ -109,6 +110,11 @@
             border: none;
         }
     </style>
+=======
+    <title>
+        <?= $data['judul']; ?>
+    </title>
+>>>>>>> 4d14c5c3d5ee77c49fa96f8339875c33b29248c9
 </head>
 <body>
 <?php Flasher::flash(); ?>

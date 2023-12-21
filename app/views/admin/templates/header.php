@@ -13,6 +13,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
     <link href="../assets/icon/logo.png" rel="icon">
+    <link rel="stylesheet" href="">
     <!-- <title>Dashboard</title> -->
 
     <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -23,7 +24,7 @@
 
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/new.css">
+    <link rel="stylesheet" href="../assets/css/style_admin.css" type="text/css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
